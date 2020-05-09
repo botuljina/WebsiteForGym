@@ -1,0 +1,431 @@
+<html lang="en">
+<head>
+  <title>Yoga</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    * {box-sizing: border-box}
+    body {font-family: Verdana, sans-serif; margin:0}
+    .mySlides {display: none}
+    img {vertical-align: middle;}
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+    </style>
+</head>
+<body>
+  
+    <div class="container mt-4">
+         <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg)" style="position: relative;">
+            <div class="container" >
+                <div class="row">
+                  <div class="col-sm" style="text-align: center;">
+                    <h4 class="display-5" style="text-align: center;"><b>OPIS TRENINGA</b></h4>
+                    
+                    <p class="text-justify" style="text-align: center; margin-top: 30px;">Kao najrasprostranjeniji vid joge u svetu Hatha se odnosi na praktikovanje joga položaja (asana), vežbi disanja (pranayama) i tehnika opuštanja, tako da se različiti stilovi joge (Ashtanga, Vinyasa,
+                        Bikram, power joga…) mogu svrstati pod Hatha jogu.</p>
+                  </div>
+                  <div class="col-sm">
+                    <h2 class="display-3" style="text-align: center;">Hatha yoga</h2>
+                  </div>
+                  <div class="col-sm"style="text-align: center;">
+                   <h4 class="display-5" style="text-align: center;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+    
+                    <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                    <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">45 min</h2></span>
+                    <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+           
+          <div class="slideshow-container" >
+
+            <div class="mySlides">
+              <div class="numbertext">1 / 3</div>
+              <img src="gym-assets/yogaCarousel/1.jpg" style="width:100%">
+              <div class="text">SLIKE SU ISTE ZA SVE VRSTE TRENINGA</div>
+            </div>
+            
+            <div class="mySlides">
+              <div class="numbertext">2 / 3</div>
+              <img src="gym-assets/yogaCarousel/2.jpg" style="width:100%">
+              <div class="text">PROMENA SLIKE SE VRSI PO POTREBI</div>
+            </div>
+            
+            <div class="mySlides">
+              <div class="numbertext">3 / 3</div>
+              <img src="gym-assets/yogaCarousel/3.jpg" style="width:100%">
+              <div class="text">OVO JE SAMO ZA PROJEKAT ISTO</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+                </script>
+           
+            <br><br><br>
+         
+          
+            <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg)" style="position: relative;">
+                <div class="container" >
+                    <div class="row">
+                      <div class="col-sm" style="text-align: center;">
+                        <h4 class="display-5" style="text-align: center;"><b>OPIS TRENINGA</b></h4>
+                        
+                        <p class="text-justify" style="text-align: center; margin-top: 30px;">Reč Gjana znači znanje. Gjana joga je put znanja i filozofije.Proučavanjem, razmišljanjem, vežbanjem i praktičnim iskustvima, postižemo sposobnost razlikovanja stvarnog od nestvarnog i dostižemo najviše znanje – samospoznaju.Joga vuče korene iz tri najveće indijske filozofije: Tantre, Samkje i Vedante, koje su deo Sanatana Dharme.</p>
+                      </div>
+                      <div class="col-sm">
+                        <h2 class="display-3" style="text-align: center;">Gjana yoga</h2>
+                      </div>
+                      <div class="col-sm"style="text-align: center;">
+                       <h4 class="display-5" style="text-align: center;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+        
+                        <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                        <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">60 min</h2></span>
+                        <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+              </div>
+            
+              <div class="slideshow-container" >
+
+                <div class="mySlides2">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="gym-assets/yogaCarousel/2.jpg" style="width:100%">
+                  <div class="text">SLIKE SU ISTE ZA SVE VRSTE TRENINGA</div>
+                </div>
+                
+                <div class="mySlides2">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="gym-assets/yogaCarousel/1.jpg" style="width:100%">
+                  <div class="text">PROMENA SLIKE SE VRSI PO POTREBI</div>
+                </div>
+                
+                <div class="mySlides2">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="gym-assets/yogaCarousel/3.jpg" style="width:100%">
+                  <div class="text">OVO JE SAMO ZA PROJEKAT ISTO</div>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                </div>
+                <br>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+                <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      var i;
+                      var slides = document.getElementsByClassName("mySlides2");
+                      var dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}    
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                          slides[i].style.display = "none";  
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                          dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";  
+                      dots[slideIndex-1].className += " active";
+                    }
+                    </script>
+             <br><br><br>
+             
+
+             <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg)" style="position: relative;">
+                <div class="container" >
+                    <div class="row">
+                      <div class="col-sm" style="text-align: center;">
+                        <h4 class="display-5" style="text-align: center;"><b>OPIS TRENINGA</b></h4>
+                        
+                        <p class="text-justify" style="text-align: center; margin-top: 30px;">Karma joga se bavi uzrokom, delom i posledicom kroz nesebično služenje drugima. Reč karma znači činiti, delati. Svaka naša aktivnost – disanje, govor, kretanje, ali i svaka misao i svaka reč – sve je karma, delanje. Međutim, pojam karma označava i univerzalni zakon uzroka i posledice.</p>
+                      </div>
+                      <div class="col-sm">
+                        <h2 class="display-3" style="text-align: center;">Karma yoga</h2>
+                      </div>
+                      <div class="col-sm"style="text-align: center;">
+                       <h4 class="display-5" style="text-align: center;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+        
+                        <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                        <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">30 min</h2></span>
+                        <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+              </div>
+            
+              <div class="slideshow-container" >
+
+                <div class="mySlides3">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="gym-assets/yogaCarousel/2.jpg" style="width:100%">
+                  <div class="text">SLIKE SU ISTE ZA SVE VRSTE TRENINGA</div>
+                </div>
+                
+                <div class="mySlides3">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="gym-assets/yogaCarousel/1.jpg" style="width:100%">
+                  <div class="text">PROMENA SLIKE SE VRSI PO POTREBI</div>
+                </div>
+                
+                <div class="mySlides3">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="gym-assets/yogaCarousel/3.jpg" style="width:100%">
+                  <div class="text">OVO JE SAMO ZA PROJEKAT ISTO</div>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                </div>
+                <br>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+                <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      var i;
+                      var slides = document.getElementsByClassName("mySlides3");
+                      var dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}    
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                          slides[i].style.display = "none";  
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                          dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";  
+                      dots[slideIndex-1].className += " active";
+                    }
+                    </script>
+             <br><br><br>
+       
+    </div>
+
+<!--FOOTER START-->
+    <div class="w-100 p-3" style="background-color: #1D1E22">
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+          
+                <!-- 1.RED -->
+                <div class="row">
+                    <!-- 1.KOLONA -->
+                    <div class="col-md-4 mx-auto">          
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Teretana Iron</h5>
+                        <p>"Physical fitness is not only one of the most important keys to a healthy body, it is the basis of dynamic and creative intellectual activity."</p>   
+                    </div>
+                    <!-- 2.KOLONA -->
+                    <div class="col-md-2 mx-auto"></div>
+                    <!-- 3.KOLONA -->
+                    <div class="col-md-2 mx-auto"></div>
+                    <!-- 4.KOLONA -->
+                    <div class="col-md-2 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Navigacija</h5>
+                        <ul class="list-unstyled">
+                        <li>
+                        <a href="#!">Pocetna strana</a>
+                        </li>
+                        <li>
+                        <a href="#!">Usluge</a>
+                        </li>
+                        <li>
+                        <a href="#!">Zakazivanje treninga</a>
+                        </li>
+                        <li>
+                        <a href="#!">Moj nalog</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>        
+            </div>         
+            <hr> 
+            <!--Mesto za dugme-->          
+            <ul class="list-unstyled list-inline text-center py-2">
+              <li class="list-inline-item">
+                <h5 class="mb-1">Registruj se besplatno!</h5>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!" class="btn btn-danger btn-rounded">SIGN UP</a>
+              </li>
+            </ul>       
+            <hr>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">  © 2020 Copyright: Luka Simovic,Konstantin Jaredic <a href="https://www.etf.bg.ac.rs/sr/studiranje/osnovne-akademske-studije/softversko-inzenjerstvo-si">Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu </a></div>
+        </footer>
+    </div>
+<!--FOOTER END-->
+</body>
