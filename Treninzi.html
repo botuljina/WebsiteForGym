@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-  <title>Treninzi</title>
+  <title>Treninzi </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
@@ -19,13 +19,13 @@
     
       <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">Početna strana<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Treninzi</a>
               <div class="dropdown-menu" style="">
-              <a class="dropdown-item" href="Treninzi.html">Spisak treninga</a>
+              <a class="dropdown-item active" href="Treninzi.html">Spisak treninga</a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
                 <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
@@ -63,8 +63,8 @@
           <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
           <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
         </form>
-        <button type="button" class="btn btn-outline-primary">SR</button>
-        <button type="button" class="btn btn-outline-primary">EN</button>
+        <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
+        <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
       </div>
     </nav>
   <!-- NAVBAR END -->
@@ -77,9 +77,9 @@
             <hr class="my-4">
             <p style="text-align: center;">Joga razlikuje pet osnovnih energija koje upravljaju različitim aktivnostima tela.</p>
             <p class="lead" style="text-align: center;">
-              <button type="button" class="btn btn-warning" style="text-align: center;">Hatha joga</button>
-              <button type="button" class="btn btn-warning">Gjana Јоgа</button>
-              <button type="button" class="btn btn-warning">Karma joga</button>
+              <button type="button" class="btn btn-warning" style="text-align: center;" onclick="location.href='YogaPodkategorije.html#HATHA';">Hatha joga</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='YogaPodkategorije.html#GJANA';">Gjana Јоgа</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='YogaPodkategorije.html#KARMA';">Karma joga</button>
             </p>
           </div>
           <div class="jumbotron" style="background-image: url(gym-assets/pilates.jpg)" style="position: relative;">
@@ -88,9 +88,9 @@
             <hr class="my-4">
             <p style="text-align: center;">Pomaže da oblikujete svoje telo i učinite mišiće vretenastim.</p>
             <p class="lead" style="text-align: center;">
-              <button type="button" class="btn btn-warning">Klasicni pilates</button>
-              <button type="button" class="btn btn-warning">Stot pilates</button>
-              <button type="button" class="btn btn-warning">Reformer pilates</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='PilatesPodkategorije.html#KLASIKP';">Klasični pilates</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='PilatesPodkategorije.html#STOT';">Stot pilates</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='PilatesPodkategorije.html#REFORMER';">Reformer pilates</button>
             </p>
           </div>
           <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)">
@@ -100,9 +100,9 @@
             <hr class="my-4">
             <p style="text-align: center;">Kada je tvoj core jak, svakodnevne obaveze postaju mnogo lakše.</p>
             <p class="lead" style="text-align: center;">
-              <button type="button" class="btn btn-warning">Klasicni core</button>
-              <button type="button" class="btn btn-warning">HIIT</button>
-              <button type="button" class="btn btn-warning">Kruzni core</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='CorePodkategorije.html#KLASIKC';">Klasični core</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='CorePodkategorije.html#HIIT';">HIIT</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='CorePodkategorije.html#KRUZNI';">Kružni core</button>
             </p>
           </div>
           <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)">
@@ -111,9 +111,9 @@
             <hr class="my-4">
             <p style="text-align: center;">Kardio vežbama ubrzavate metabolizam, jačate srce i pluća i smanjujete broj otkucaja srca u stanju mirovanja.</p>
             <p class="lead" style="text-align: center;">
-              <button type="button" class="btn btn-warning">Trcanje traka</button>
-              <button type="button" class="btn btn-warning">Bicikl trening</button>
-              <button type="button" class="btn btn-warning">Stepenice</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='CardioPodkategorije.html#TRCANJE';">Trcanje traka</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='CardioPodkategorije.html#BICIKL';">Bicikl trening</button>
+              <button type="button" class="btn btn-warning" onclick="location.href='CardioPodkategorije.html#STEPENICE';">Stepenice</button>
             </p>
           </div>
     </div>

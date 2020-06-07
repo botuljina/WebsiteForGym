@@ -23,16 +23,16 @@
   
     <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="index.html">Početna strana<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Treninzi</a>
             <div class="dropdown-menu" style="">
             <a class="dropdown-item" href="Treninzi.html">Spisak treninga</a>
             <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
-              <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
+              <a class="dropdown-item active" href="PilatesPodkategorije.html">Pilates</a>
               <a class="dropdown-item" href="CorePodkategorije.html">Core</a>
               <a class="dropdown-item" href="CardioPodkategorije.html">Cardio</a>
               
@@ -67,8 +67,8 @@
         <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
         <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
       </form>
-      <button type="button" class="btn btn-outline-primary">SR</button>
-      <button type="button" class="btn btn-outline-primary">EN</button>
+      <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
+        <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
     </div>
   </nav>
 <!-- NAVBAR END -->
@@ -83,7 +83,7 @@
                     <p class="text-justify" style="text-align: center; margin-top: 30px;">Savremeni način života (sedenje za kompjuterom, fizička neaktivnost) donosi bolove u leđima i različite probleme sa kičmom i zglobovima. Pilates koji vežbamo danas evoluirao je iz rekreativnog u terapeutski program vežbanja. Danas nije retko da fizioterapeuti savetuju svoje pacijente da vežbaju Pilates.</p>
                   </div>
                   <div class="col-sm">
-                    <h2 class="display-3" style="text-align: center;">KLASIK PILATES</h2>
+                    <h2 class="display-3" style="text-align: center;" id = "KLASIKP">KLASIK PILATES</h2>
                   </div>
                   <div class="col-sm"style="text-align: center;">
                    <h4 class="display-5" style="text-align: center;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
@@ -137,7 +137,7 @@
                         </p>
                       </div>
                       <div class="col-sm">
-                        <h2 class="display-3" style="text-align: center;">STOT PILATES</h2>
+                        <h2 class="display-3" style="text-align: center;" id = "STOT">STOT PILATES</h2>
                       </div>
                       <div class="col-sm"style="text-align: center;">
                        <h4 class="display-5" style="text-align: center;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
@@ -189,7 +189,7 @@
                         </p>
                       </div>
                       <div class="col-sm">
-                        <h2 class="display-3" style="text-align: center;">REFORMER PILATES</h2>
+                        <h2 class="display-3" style="text-align: center;"id = "REFORMER">REFORMER PILATES</h2>
                       </div>
                       <div class="col-sm"style="text-align: center;">
                        <h4 class="display-5" style="text-align: center;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
