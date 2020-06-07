@@ -47,7 +47,7 @@
     
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar" style="background-color: #1D1E22">
-        <a class="navbar-brand" href="#" style="background-color: #1D1E22">
+        <a class="navbar-brand" href="index.html" style="background-color: #1D1E22">
             <img src="gym-assets/resizelogo.png" alt="" >
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,25 +56,43 @@
       
         <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Početna strana<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Usluge</a>
+              <a class="nav-link" href="index.html">Početna strana<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Treninzi</a>
+                <div class="dropdown-menu" style="">
+                <a class="dropdown-item" href="Treninzi.html">Spisak treninga</a>
+                <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
+                  <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
+                  <a class="dropdown-item" href="CorePodkategorije.html">Core</a>
+                  <a class="dropdown-item" href="CardioPodkategorije.html">Cardio</a>
+                  
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Zakazivanje usluga</a>
+                <div class="dropdown-menu" style="">
+                  <a class="dropdown-item" href="">Zakaži trening</a>
+                  <a class="dropdown-item" href="">Zakaži masažu</a>
+                  <a class="dropdown-item" href="">Zakaži nutricionistu</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Moj nalog</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Zakazivanje treninga</a>
-            </li>
+            <button type="button" class="btn btn-outline-danger">REGISTRUJ SE!</button>
+           
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
             <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
             <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
-            <a href="#!" class="btn btn-danger btn-rounded">SIGN UP!</a>
           </form>
+          <button type="button" class="btn btn-outline-primary">SR</button>
+          <button type="button" class="btn btn-outline-primary">EN</button>
         </div>
       </nav>
 
