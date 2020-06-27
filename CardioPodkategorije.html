@@ -9,7 +9,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
+  <script src="js/login.js"></script>
+  <script src="js/training.js"></script>
   
 </head>
 <body onload="displayAllSliders()">
@@ -64,173 +65,206 @@
        
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
-        <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
-        <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+        <input id="usernameField" class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+        <input id="passwdField" class="form-control mr-sm-2" type="password" placeholder="PASSWORD">
+        <button id="loginButton" type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+        <button id="logoutButton" type="button" class="btn btn-danger" style="margin-right: 5px;">LOGOUT</button>
+        <button id="registerButton" type="button" class="btn btn-success" style="margin-right: 5px;">REGISTER</button>
       </form>
       <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
         <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
     </div>
-  </nav>
+    </nav>
 <!-- NAVBAR END -->
-
-    <div class="container mt-4">
-        <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)" style="position: relative;">
-            <div class="container" >
-                <div class="row">
-                  <div class="col-sm" style="text-align: center;">
-                    <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
-                    
-                    <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
-                        Kao i ostale kardiovaskularne vežbe, hodanje, trčanje, traka poboljšava izdržljivost i daje mnoge druge pozitivne zdravstvene efekte.
+<div class="row">
+  <div class="col-4 offset-4 d-flex justify-content-center" style="">
+    <div class="btn-group">
+      <button id="sortABC" data-order="1" type="button" class="btn btn-primary">Ime</button>
+      <button id="sortTezina" data-order="1" type="button" class="btn btn-primary">Tezina</button>
+      <button id="sortDuzina" data-order="1" type="button" class="btn btn-primary">Duzina</button>
+    </div>
+  </div>
+</div>
+  <div class="container mt-4" id="TRAININGContainer">
+    <div id="TRCANJEContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)" style="position: relative;">
+          <div class="container" >
+              <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
+                  
+                  <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                      Kao i ostale kardiovaskularne vežbe, hodanje, trčanje, traka poboljšava izdržljivost i daje mnoge druge pozitivne zdravstvene efekte.
 Omogućuju manji udar đona patike na podlogu u odnosu na obične podloge za trčanje. Ovo bolje apsorbovanje udara ima pozitivan uticaj na sve zglobove, posebno kolena i donja leđa.
-                  </div>
-                  <div class="col-sm">
-                    <h2 class="display-3" style="text-align: center;color:white;" id ="TRCANJE">TRČANJE TRAKA</h2>
-                  </div>
-                  <div class="col-sm"style="text-align: center;">
-                   <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
-    
-                    <h4 class="display-5" style="text-align: center;">trajanje</h4>
-                    <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">20 min</h2></span>
-                    <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
-                      </div>
-                  </div>
+                </div>
+                <div class="col-sm">
+                  <h2 class="display-3" style="text-align: center;color:white;" id ="TRCANJE">TRČANJE TRAKA</h2>
+                </div>
+                <div class="col-sm"style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+  
+                  <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                  <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">20 min</h2></span>
+                  <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                    </div>
                 </div>
               </div>
-              
-          </div>
-           
-         
-
-            <div class="slidercontainer">  
-                <div class="showSlide" id="slide">  
-                    <img src="gym-assets/cardioCarousel/1.jpg" />  
-                    <div class="content">Trake za trčanje galerija</div>  
-                </div>  
-                <div class="showSlide" id="slider">  
-                    <img src="gym-assets/cardioCarousel/2.jpg" />  
-                    <div class="content">Slike su iste</div>  
-                </div>  
-          
-                <div class="showSlide" id="slid">  
-                    <img src="gym-assets/cardioCarousel/3.jpg" />  
-                    <div class="content">zbog vizuelnog prikaza
-                    </div>  
-                </div>  
- 
-                <!-- Navigation arrows -->  
-                <a class="left" onclick="nextSlide(-1)">❮</a>  
-                <a class="right" onclick="nextSlide(1)">❯</a>  
-            </div>  
-            <br><br><br>
-         
-          
-            <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)" style="position: relative;">
-                <div class="container" >
-                    <div class="row">
-                      <div class="col-sm" style="text-align: center;">
-                        <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
-                        
-                        <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
-                            Trening na sobnom biciklu je jedan najpopularnijih načina da steknete kondiciju i da smršate.
-                            Grupe mišića koje su pogođene ovim treninzima su uglavnom butine i listovi. Moglo bi se reći i donji deo leđa i tricepski dok daju potporu telu za vreme vožnje
-                      </div>
-                      <div class="col-sm">
-                        <h2 class="display-3" style="text-align: center;color:white;" id ="BICIKL">BICIKL TRENING</h2>
-                      </div>
-                      <div class="col-sm"style="text-align: center;">
-                       <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
-        
-                        <h4 class="display-5" style="text-align: center;">trajanje</h4>
-                        <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">60 min</h2></span>
-                        <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-              </div>
+            </div>
             
-              <div class="slidercontainer">  
-                <div class="showSlide1" id="slider1">  
-                    <img src="gym-assets/cardioCarousel/2.jpg" />  
-                    <div class="content">Bicikl Trening</div>  
-                </div>  
-                <div class="showSlide1" id="slider12">  
-                    <img src="gym-assets/cardioCarousel/1.jpg" />  
-                    <div class="content">Slike su iste</div>  
-                </div>  
-          
-                <div class="showSlide1" id="slider13">  
-                    <img src="gym-assets/cardioCarousel/3.jpg" />  
-                    <div class="content">zbog vizuelnog prikaza
-                    </div>  
-                </div>  
- 
-                <!-- Navigation arrows -->  
-                <a class="left" onclick="nextSlides(-1,1)">❮</a>  
-                <a class="right" onclick="nextSlides(1,1)">❯</a>  
-            </div> 
-             <br><br><br>
-             
+      </div>
+      <a href="#TRCANJEgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="TRCANJEgalerija" class="collapse card-body">
+        <div class="slidercontainer">  
+          <div class="showSlide" id="slide">  
+              <img src="gym-assets/cardioCarousel/1.jpg" />  
+              <div class="content">Trake za trčanje galerija</div>  
+          </div>  
+          <div class="showSlide" id="slider">  
+              <img src="gym-assets/cardioCarousel/2.jpg" />  
+              <div class="content">Slike su iste</div>  
+          </div>  
+    
+          <div class="showSlide" id="slid">  
+              <img src="gym-assets/cardioCarousel/3.jpg" />  
+              <div class="content">zbog vizuelnog prikaza
+              </div>  
+          </div>  
 
-             <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)" style="position: relative;">
-                <div class="container" >
-                    <div class="row">
-                      <div class="col-sm" style="text-align: center;">
-                        <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
-                        
-                        <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
-                            Veoma dobar način za skidanje viška kilograma je da pokretne stepenice kombinujemo sa nekog drugom vežbom, npr. sa nekom vežbom za izgradnju mišića. Kardio trening niskog inteziteta, koga možete raditi na stepenicama, je idealan za mršavljenje ali je potrebno omogućiti organizmu da topi mast i nakon treninga. 
-                      </div>
-                      <div class="col-sm">
-                        <h2 class="display-3" style="text-align: center;color:white;" id ="STEPENICE">STEPENICE TRENING</h2>
-                      </div>
-                      <div class="col-sm"style="text-align: center;">
-                       <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
-        
-                        <h4 class="display-5" style="text-align: center;">trajanje</h4>
-                        <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">45 min</h2></span>
-                        <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-              </div>
-              <!--SLIDER 3-->
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlide(-1)">❮</a>  
+          <a class="right" onclick="nextSlide(1)">❯</a>  
+        </div>
+      </div>
 
-              <div class="slidercontainer" onload="displaySlidesOther2(1,2)">  
-                <div class="showSlide2" id="slider1">  
-                    <img src="gym-assets/cardioCarousel/3.jpg" />  
-                    <div class="content">Trening</div>  
-                </div>  
-                <div class="showSlide2" id="slider12">  
-                    <img src="gym-assets/cardioCarousel/1.jpg" />  
-                    <div class="content">Slike su iste</div>  
-                </div>  
-          
-                <div class="showSlide2" id="slider13">  
-                    <img src="gym-assets/cardioCarousel/2.jpg" />  
-                    <div class="content">zbog vizuelnog prikaza
-                    </div>  
-                </div>  
- 
-                <!-- Navigation arrows -->  
-                <a class="left" onclick="nextSlides(-1,2)">❮</a>  
-                <a class="right" onclick="nextSlides(1,2)">❯</a>  
-            </div> 
-              
-             <br><br><br>
-       
+      <a href="#TRCANJEkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="TRCANJEkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="TRCANJE"></div>
+      </div>
+      
+      <br><br><br>
     </div>
+
+    <div id="BICIKLContainer">  
+      <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)" style="position: relative;">
+          <div class="container" >
+              <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
+                  
+                  <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                      Trening na sobnom biciklu je jedan najpopularnijih načina da steknete kondiciju i da smršate.
+                      Grupe mišića koje su pogođene ovim treninzima su uglavnom butine i listovi. Moglo bi se reći i donji deo leđa i tricepski dok daju potporu telu za vreme vožnje
+                </div>
+                <div class="col-sm">
+                  <h2 class="display-3" style="text-align: center;color:white;" id ="BICIKL">BICIKL TRENING</h2>
+                </div>
+                <div class="col-sm"style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+  
+                  <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                  <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">60 min</h2></span>
+                  <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+      
+      <a href="#BICIKLgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="BICIKLgalerija" class="collapse card-body">
+        <div class="slidercontainer">  
+          <div class="showSlide1" id="slider1">  
+              <img src="gym-assets/cardioCarousel/2.jpg" />  
+              <div class="content">Bicikl Trening</div>  
+          </div>  
+          <div class="showSlide1" id="slider12">  
+              <img src="gym-assets/cardioCarousel/1.jpg" />  
+              <div class="content">Slike su iste</div>  
+          </div>  
+    
+          <div class="showSlide1" id="slider13">  
+              <img src="gym-assets/cardioCarousel/3.jpg" />  
+              <div class="content">zbog vizuelnog prikaza
+              </div>  
+          </div>  
+
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlides(-1,1)">❮</a>  
+          <a class="right" onclick="nextSlides(1,1)">❯</a>  
+        </div>
+      </div>
+
+      <a href="#BICIKLkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="BICIKLkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="BICIKL"></div>
+      </div>
+      <br><br><br>
+    </div>
+
+    <div id="STEPENICEContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg)" style="position: relative;">
+        <div class="container" >
+            <div class="row">
+              <div class="col-sm" style="text-align: center;">
+                <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
+                
+                <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                    Veoma dobar način za skidanje viška kilograma je da pokretne stepenice kombinujemo sa nekog drugom vežbom, npr. sa nekom vežbom za izgradnju mišića. Kardio trening niskog inteziteta, koga možete raditi na stepenicama, je idealan za mršavljenje ali je potrebno omogućiti organizmu da topi mast i nakon treninga. 
+              </div>
+              <div class="col-sm">
+                <h2 class="display-3" style="text-align: center;color:white;" id ="STEPENICE">STEPENICE TRENING</h2>
+              </div>
+              <div class="col-sm"style="text-align: center;">
+                <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+
+                <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">45 min</h2></span>
+                <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+      <a href="#STEPENICEgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="STEPENICEgalerija" class="collapse card-body">
+        <div class="slidercontainer" onload="displaySlidesOther2(1,2)">  
+          <div class="showSlide2" id="slider1">  
+              <img src="gym-assets/cardioCarousel/3.jpg" />  
+              <div class="content">Trening</div>  
+          </div>  
+          <div class="showSlide2" id="slider12">  
+              <img src="gym-assets/cardioCarousel/1.jpg" />  
+              <div class="content">Slike su iste</div>  
+          </div>  
+    
+          <div class="showSlide2" id="slider13">  
+              <img src="gym-assets/cardioCarousel/2.jpg" />  
+              <div class="content">zbog vizuelnog prikaza
+              </div>  
+          </div>  
+
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlides(-1,2)">❮</a>  
+          <a class="right" onclick="nextSlides(1,2)">❯</a>  
+        </div> 
+      </div>
+
+      <a href="#STEPENICEkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="STEPENICEkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="STEPENICE"></div>
+      </div>
+      
+      <br><br><br>
+    </div>
+  </div>
 
 <!--FOOTER START-->
 <div class="w-100 p-3" style="background-color: #1D1E22">

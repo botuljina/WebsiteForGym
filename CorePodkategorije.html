@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+  <script src="js/login.js"></script>
+  <script src="js/training.js"></script>
   
 </head>
 <body onload="displayAllSliders()">
@@ -63,173 +64,208 @@
        
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
-        <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
-        <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+        <input id="usernameField" class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+        <input id="passwdField" class="form-control mr-sm-2" type="password" placeholder="PASSWORD">
+        <button id="loginButton" type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+        <button id="logoutButton" type="button" class="btn btn-danger" style="margin-right: 5px;">LOGOUT</button>
+        <button id="registerButton" type="button" class="btn btn-success" style="margin-right: 5px;">REGISTER</button>
       </form>
       <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
         <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
     </div>
   </nav>
 <!-- NAVBAR END -->
-    <div class="container mt-4">
-        <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)" style="position: relative;">
-            <div class="container" >
-                <div class="row">
-                  <div class="col-sm" style="text-align: center;">
-                    <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
-                    
-                    <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
-                        Snažan core radi u sadejstvu sa ostalim mišićnim grupama, mišićima koji su pokretači pokreta. 
-                        Tako ga treba i trenirati. 
-                        Potrebno je da naučimo mišiće da rade zajedno, jer ćemo samo na taj način dobiti bolje sportske performance I podići funkciju našeg tela na viši nivo.
-                  </div>
-                  <div class="col-sm">
-                    <h2 class="display-3" style="text-align: center;color:white;" id = "KLASIKC">KLASIK CORE</h2>
-                  </div>
-                  <div class="col-sm"style="text-align: center;">
-                   <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
-    
-                    <h4 class="display-5" style="text-align: center;">trajanje</h4>
-                    <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">60 min</h2></span>
-                    <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-                      </div>
-                  </div>
+  <div class="row">
+    <div class="col-4 offset-4 d-flex justify-content-center" style="">
+      <div class="btn-group">
+        <button id="sortABC" data-order="1" type="button" class="btn btn-primary">Ime</button>
+        <button id="sortTezina" data-order="1" type="button" class="btn btn-primary">Tezina</button>
+        <button id="sortDuzina" data-order="1" type="button" class="btn btn-primary">Duzina</button>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4" id="TRAININGContainer">
+    <div id="KLASIKCContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)" style="position: relative;">
+          <div class="container" >
+              <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
+                  
+                  <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                      Snažan core radi u sadejstvu sa ostalim mišićnim grupama, mišićima koji su pokretači pokreta. 
+                      Tako ga treba i trenirati. 
+                      Potrebno je da naučimo mišiće da rade zajedno, jer ćemo samo na taj način dobiti bolje sportske performance I podići funkciju našeg tela na viši nivo.
+                </div>
+                <div class="col-sm">
+                  <h2 class="display-3" style="text-align: center;color:white;" id = "KLASIKC">KLASIK CORE</h2>
+                </div>
+                <div class="col-sm"style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+  
+                  <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                  <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">60 min</h2></span>
+                  <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                    </div>
                 </div>
               </div>
-              
-          </div>
-           
-         
-
-            <div class="slidercontainer">  
-                <div class="showSlide" id="slide">  
-                    <img src="gym-assets/coreCarousel/1.jpg" />  
-                    <div class="content">Klasik Trening Galerija</div>  
-                </div>  
-                <div class="showSlide" id="slider">  
-                    <img src="gym-assets/coreCarousel/2.jpg" />  
-                    <div class="content">Slike su iste</div>  
-                </div>  
-          
-                <div class="showSlide" id="slid">  
-                    <img src="gym-assets/coreCarousel/3.jpg" />  
-                    <div class="content">zbog vizuelnog prikaza
-                    </div>  
-                </div>  
- 
-                <!-- Navigation arrows -->  
-                <a class="left" onclick="nextSlide(-1)">❮</a>  
-                <a class="right" onclick="nextSlide(1)">❯</a>  
-            </div>  
-            <br><br><br>
-         
-          
-            <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)" style="position: relative;">
-                <div class="container" >
-                    <div class="row">
-                      <div class="col-sm" style="text-align: center;">
-                        <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
-                        
-                        <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
-                            HIIT je na engleskom skraćenica za High Intensity Interval Training, odnosno visoko-intenzivni trening sa intervalima. 
-                            Dakle, HIIT je vežbanje koje se sastoji iz kombinovanja osnovnih funkcionalnih vežbi koje se izvode u intervalima kako bi se postigao izuzetno visok intenzitet
-                      </div>
-                      <div class="col-sm">
-                        <h2 class="display-3" style="text-align: center;color:white;" id = "HIIT">HIIT CORE</h2>
-                      </div>
-                      <div class="col-sm"style="text-align: center;">
-                       <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
-        
-                        <h4 class="display-5" style="text-align: center;">trajanje</h4>
-                        <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">30 min</h2></span>
-                        <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-              </div>
+            </div>
             
-              <div class="slidercontainer">  
-                <div class="showSlide1" id="slider1">  
-                    <img src="gym-assets/coreCarousel/3.jpg" />  
-                    <div class="content">HIIT Trening</div>  
-                </div>  
-                <div class="showSlide1" id="slider12">  
-                    <img src="gym-assets/coreCarousel/1.jpg" />  
-                    <div class="content">Slike su iste</div>  
-                </div>  
-          
-                <div class="showSlide1" id="slider13">  
-                    <img src="gym-assets/coreCarousel/2.jpg" />  
-                    <div class="content">zbog vizuelnog prikaza
-                    </div>  
-                </div>  
- 
-                <!-- Navigation arrows -->  
-                <a class="left" onclick="nextSlides(-1,1)">❮</a>  
-                <a class="right" onclick="nextSlides(1,1)">❯</a>  
-            </div> 
-             <br><br><br>
-             
+      </div>
+      <a href="#KLASIKCgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="KLASIKCgalerija" class="collapse card-body">
+        <div class="slidercontainer">  
+          <div class="showSlide" id="slide">  
+              <img src="gym-assets/coreCarousel/1.jpg" />  
+              <div class="content">Klasik Trening Galerija</div>  
+          </div>  
+          <div class="showSlide" id="slider">  
+              <img src="gym-assets/coreCarousel/2.jpg" />  
+              <div class="content">Slike su iste</div>  
+          </div>  
+    
+          <div class="showSlide" id="slid">  
+              <img src="gym-assets/coreCarousel/3.jpg" />  
+              <div class="content">zbog vizuelnog prikaza
+              </div>  
+          </div>  
 
-             <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)" style="position: relative;">
-                <div class="container" >
-                    <div class="row">
-                      <div class="col-sm" style="text-align: center;">
-                        <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
-                        
-                        <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
-                            Kružni trening predstavlja trening umerenog do visokog inteziteta u kom se u 10 stanica, angažovanjem velikih mišićnih grupa i core mišića, jača, oblikuje i zateže čitavo telo.
-                      </div>
-                      <div class="col-sm">
-                        <h2 class="display-3" style="text-align: center;color:white;" id = "KRUZNI">KRUŽNI CORE</h2>
-                      </div>
-                      <div class="col-sm"style="text-align: center;">
-                       <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlide(-1)">❮</a>  
+          <a class="right" onclick="nextSlide(1)">❯</a>  
+        </div>
+      </div>
+
+      <a href="#KLASIKCkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="KLASIKCkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="KLASIKC"></div>
+      </div>
+
+      <br><br><br>
+    </div> 
         
-                        <h4 class="display-5" style="text-align: center;">trajanje</h4>
-                        <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">90 min</h2></span>
-                        <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
+    <div id="HIITContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)" style="position: relative;">
+          <div class="container" >
+              <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
                   
-              </div>
-              <!--SLIDER 3-->
+                  <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                      HIIT je na engleskom skraćenica za High Intensity Interval Training, odnosno visoko-intenzivni trening sa intervalima. 
+                      Dakle, HIIT je vežbanje koje se sastoji iz kombinovanja osnovnih funkcionalnih vežbi koje se izvode u intervalima kako bi se postigao izuzetno visok intenzitet
+                </div>
+                <div class="col-sm">
+                  <h2 class="display-3" style="text-align: center;color:white;" id = "HIIT">HIIT CORE</h2>
+                </div>
+                <div class="col-sm"style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
 
-              <div class="slidercontainer" onload="displaySlidesOther2(1,2)">  
-                <div class="showSlide2" id="slider1">  
-                    <img src="gym-assets/coreCarousel/2.jpg" />  
-                    <div class="content">Trening</div>  
-                </div>  
-                <div class="showSlide2" id="slider12">  
-                    <img src="gym-assets/coreCarousel/3.jpg" />  
-                    <div class="content">Slike su iste</div>  
-                </div>  
-          
-                <div class="showSlide2" id="slider13">  
-                    <img src="gym-assets/coreCarousel/1.jpg" />  
-                    <div class="content">zbog vizuelnog prikaza
-                    </div>  
-                </div>  
- 
-                <!-- Navigation arrows -->  
-                <a class="left" onclick="nextSlides(-1,2)">❮</a>  
-                <a class="right" onclick="nextSlides(1,2)">❯</a>  
-            </div> 
-              
-             <br><br><br>
-       
+                  <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                  <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">30 min</h2></span>
+                  <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+      <a href="#HIITgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="HIITgalerija" class="collapse card-body">
+        <div class="slidercontainer">  
+          <div class="showSlide1" id="slider1">  
+              <img src="gym-assets/coreCarousel/3.jpg" />  
+              <div class="content">HIIT Trening</div>  
+          </div>  
+          <div class="showSlide1" id="slider12">  
+              <img src="gym-assets/coreCarousel/1.jpg" />  
+              <div class="content">Slike su iste</div>  
+          </div>  
+    
+          <div class="showSlide1" id="slider13">  
+              <img src="gym-assets/coreCarousel/2.jpg" />  
+              <div class="content">zbog vizuelnog prikaza
+              </div>  
+          </div>  
+
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlides(-1,1)">❮</a>  
+          <a class="right" onclick="nextSlides(1,1)">❯</a>  
+        </div>
+      </div>
+
+      <a href="#HIITkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="HIITkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="HIIT"></div>
+      </div>
+
+      <br><br><br>
     </div>
+
+    <div id="KRUZNIContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/core.jpg)" style="position: relative;">
+        <div class="container" >
+            <div class="row">
+              <div class="col-sm" style="text-align: center;">
+                <h4 class="display-5" style="text-align: center;color:white;"><b>OPIS TRENINGA</b></h4>
+                
+                <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                    Kružni trening predstavlja trening umerenog do visokog inteziteta u kom se u 10 stanica, angažovanjem velikih mišićnih grupa i core mišića, jača, oblikuje i zateže čitavo telo.
+              </div>
+              <div class="col-sm">
+                <h2 class="display-3" style="text-align: center;color:white;" id = "KRUZNI">KRUŽNI CORE</h2>
+              </div>
+              <div class="col-sm"style="text-align: center;">
+                <h4 class="display-5" style="text-align: center;color:white;"> <b>SPECIFIKACIJA TRENINGA</b></h4>
+
+                <h4 class="display-5" style="text-align: center;">trajanje</h4>
+                <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">90 min</h2></span>
+                <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">težina</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+      
+      <a href="#KRUZNIgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="KRUZNIgalerija" class="collapse card-body">
+        <div class="slidercontainer" onload="displaySlidesOther2(1,2)">  
+          <div class="showSlide2" id="slider1">  
+              <img src="gym-assets/coreCarousel/2.jpg" />  
+              <div class="content">Trening</div>  
+          </div>  
+          <div class="showSlide2" id="slider12">  
+              <img src="gym-assets/coreCarousel/3.jpg" />  
+              <div class="content">Slike su iste</div>  
+          </div>  
+    
+          <div class="showSlide2" id="slider13">  
+              <img src="gym-assets/coreCarousel/1.jpg" />  
+              <div class="content">zbog vizuelnog prikaza
+              </div>  
+          </div>  
+  
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlides(-1,2)">❮</a>  
+          <a class="right" onclick="nextSlides(1,2)">❯</a>  
+        </div>
+      </div>
+
+      <a href="#KRUZNIkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="KRUZNIkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="KRUZNI"></div>
+      </div>
+
+      <br><br><br>
+    </div>
+  </div>
 
     <!--FOOTER START-->
     <div class="w-100 p-3" style="background-color: #1D1E22">

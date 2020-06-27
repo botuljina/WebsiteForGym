@@ -64,9 +64,11 @@
      
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
-      <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
-      <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+      <input id="usernameField" class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+      <input id="passwdField" class="form-control mr-sm-2" type="password" placeholder="PASSWORD">
+      <button id="loginButton" type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+      <button id="logoutButton" type="button" class="btn btn-danger" style="margin-right: 5px;">LOGOUT</button>
+      <button id="registerButton" type="button" class="btn btn-success" style="margin-right: 5px;">REGISTER</button>
     </form>
     <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
         <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
@@ -75,7 +77,6 @@
 <!-- NAVBAR END -->
 
   <div class="row">
-
     <div class="col-4 offset-4 d-flex justify-content-center" style="">
       <div class="btn-group">
         <button id="sortABC" data-order="1" type="button" class="btn btn-primary">Ime</button>
@@ -86,7 +87,7 @@
   </div>
   <div class="container mt-4" id="TRAININGContainer">
     <div id="HATHAContainer">
-      <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg)" style="position: relative;">
+      <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg); margin-bottom: 0;" style="position: relative;">
             <div class="container" >
                 <div class="row">
                   <div class="col-sm" style="text-align: center;">
@@ -112,9 +113,8 @@
               </div>
               
       </div>
-      <a href="#HATHAgalerija" data-toggle="collapse">Galerija</a>
-
-      <div id="HATHAgalerija" class="collapse">
+      <a href="#HATHAgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
+      <div id="HATHAgalerija" class="collapse card-body">
         <div class="slidercontainer">  
           <div class="showSlide" id="slide">  
               <img src="gym-assets/yogaCarousel/1.jpg" />  
@@ -134,12 +134,11 @@
           <!-- Navigation arrows -->  
           <a class="left" onclick="nextSlide(-1)">❮</a>  
           <a class="right" onclick="nextSlide(1)">❯</a>  
-      </div>  
-      </div> 
-      
-      <a href="#HATHAkomentari" data-toggle="collapse">Komentari</a>
+      </div>
+      </div>
 
-      <div id="HATHAkomentari" class="collapse">
+      <a href="#HATHAkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
+      <div id="HATHAkomentari" class="collapse card-body">
         <div data-type="komentari" data-training="HATHA"></div>
       </div>
 
@@ -147,7 +146,7 @@
     </div>
 
     <div id="GJANAContainer">
-      <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg)" style="position: relative;">
+      <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg); margin-bottom: 0;" style="position: relative;">
           <div class="container" >
               <div class="row">
                 <div class="col-sm" style="text-align: center;">
@@ -172,9 +171,9 @@
             </div>
             
       </div>
-      <a href="#GJANAgalerija" data-toggle="collapse">Galerija</a>
+      <a href="#GJANAgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
 
-      <div id="GJANAgalerija" class="collapse">
+      <div id="GJANAgalerija" class="collapse card-body">
         <div class="slidercontainer">  
           <div class="showSlide1" id="slider1">  
               <img src="gym-assets/yogaCarousel/2.jpg" />  
@@ -197,9 +196,9 @@
       </div> 
       </div>
       
-      <a href="#GJANAkomentari" data-toggle="collapse">Komentari</a>
+      <a href="#GJANAkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
 
-      <div id="GJANAkomentari" class="collapse">
+      <div id="GJANAkomentari" class="collapse card-body">
         <div data-type="komentari" data-training="GJANA"></div>
       </div>
       
@@ -207,7 +206,7 @@
     </div>
 
     <div id="KARMAContainer">
-      <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg)" style="position: relative;">
+      <div class="jumbotron" style="background-image: url(gym-assets/yoga.jpg); margin-bottom: 0;" style="position: relative;">
           <div class="container" >
               <div class="row">
                 <div class="col-sm" style="text-align: center;">
@@ -233,9 +232,9 @@
             
       </div>
       <!--SLIDER 3-->
-      <a href="#KARMAgalerija" data-toggle="collapse">Galerija</a>
+      <a href="#KARMAgalerija" data-toggle="collapse"><div class="card-header">Galerija</div></a>
 
-      <div id="KARMAgalerija" class="collapse">
+      <div id="KARMAgalerija" class="collapse card-body">
         <div class="slidercontainer" onload="displaySlidesOther2(1,2)">  
           <div class="showSlide2" id="slider1">  
               <img src="gym-assets/yogaCarousel/3.jpg" />  
@@ -258,9 +257,9 @@
       </div>
       </div> 
       
-      <a href="#KARMAkomentari" data-toggle="collapse">Komentari</a>
+      <a href="#KARMAkomentari" data-toggle="collapse"><div class="card-header">Komentari</div></a>
 
-      <div id="KARMAkomentari" class="collapse">
+      <div id="KARMAkomentari" class="collapse card-body">
         <div data-type="komentari" data-training="KARMA"></div>
       </div>
       <br><br><br>

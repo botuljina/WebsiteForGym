@@ -13,7 +13,52 @@ const trainingData = {
         "tezina" : 85,
         "duzina" : 30,
         "ime" : "Karma"
-    }
+    },
+    "KLASIKPContainer" : {
+        "tezina" : 40,
+        "duzina" : 40,
+        "ime" : "Klasik"
+    },
+    "STOTContainer" : {
+        "tezina" : 50,
+        "duzina" : 60,
+        "ime" : "Stot"
+    },
+    "REFORMERContainer" : {
+        "tezina" : 85,
+        "duzina" : 35,
+        "ime" : "Reformer"
+    },
+    "KLASIKCContainer" : {
+        "tezina" : 50,
+        "duzina" : 60,
+        "ime" : "Klasik"
+    },
+    "HIITContainer" : {
+        "tezina" : 80,
+        "duzina" : 30,
+        "ime" : "Hiit"
+    },
+    "KRUZNIContainer" : {
+        "tezina" : 70,
+        "duzina" : 90,
+        "ime" : "Kruzni"
+    },
+    "TRCANJEContainer" : {
+        "tezina" : 25,
+        "duzina" : 20,
+        "ime" : "Trcanje"
+    },
+    "BICIKLContainer" : {
+        "tezina" : 80,
+        "duzina" : 60,
+        "ime" : "Bicikl"
+    },
+    "STEPENICEContainer" : {
+        "tezina" : 70,
+        "duzina" : 45,
+        "ime" : "Stepenice"
+    },
 };
 var comments = null;
 window.addEventListener("load", initTrainingData);
@@ -40,9 +85,9 @@ function initTrainingData() {
     if (comments == null) {
         comments = {
             "KARMA": [], "HATHA": [], "GJANA": [],
-            "KLASIKPILATES": [], "STOT": [], "REFORMER": [],
-            "KLASIKCORE": [], "HIIT": [], "KRUZNI": [],
-            "TRCANJE": [], "TRAKA": [], "STEPENICE": []
+            "KLASIKP": [], "STOT": [], "REFORMER": [],
+            "KLASIKC": [], "HIIT": [], "KRUZNI": [],
+            "TRCANJE": [], "BICIKL": [], "STEPENICE": []
         }
         localStorage.setItem("comments", JSON.stringify(comments));
     }
@@ -55,7 +100,7 @@ function initTrainingData() {
 }
 
 function addComment(type, text) {
-    var author = localStorage.getItem("logged");
+    var author = storageGet("logged");
     if (author == null) return;
 
     comments[type].push({author, text});
@@ -65,18 +110,38 @@ function addComment(type, text) {
 
 function renderComments(type) {
     var container = document.querySelector("#" + type + "Container * [data-type=komentari]");
+    container.innerHTML = "";
     if (container == null) return;
 
     comments[type].forEach(element => {
         var comment = document.createElement("div");
-        var author = document.createElement("h4");
-        author.innerText = element.author;
-        var text = document.createElement("p");
+        var text = document.createElement("h4");
+        text.style = "word-wrap: break-word;";
+        var author = document.createElement("p");
+        author.innerText = "comment by: " + element.author;
         text.innerText = element.text;
-        comment.appendChild(author);
         comment.appendChild(text);
+        comment.appendChild(author);
         container.appendChild(comment);
     })
+    if (comments[type].length == 0) {
+        var message = document.createElement("h4");
+        message.innerText = "Nema komentara za ovaj trening";
+        container.appendChild(message);
+    }
+    if (storageGet("logged") == null) return;
+    var createComment = document.createElement("div");
+    createComment.innerHTML = "<textarea id='commentTextArea" + type + "' rows='3' cols='60'></textarea><br>";
+    var post = document.createElement("button");
+    post.classList.add("btn", "btn-secondary");
+    post.innerText = "post";
+    createComment.appendChild(post);
+    post.addEventListener("click", ()=> {
+        var text = document.getElementById('commentTextArea' + type).value;
+        if (text == null) return;
+        addComment(type, text);
+    });
+    container.appendChild(createComment);
 }
 
 function sortTrainingCards(criteria, order = 1) {
