@@ -6,7 +6,7 @@ function storageSet(key, value) {
 }
 
 window.addEventListener("load", () => {
-    var version = "2.1";
+    var version = "2.3";
     if (storageGet("version") === version) return;
     localStorage.clear();
     storageSet("version", version);
@@ -14,6 +14,15 @@ window.addEventListener("load", () => {
 
      //  userbase
     storageSet("users", []);
+
+    //  ratings
+    var ratings = {
+        "KARMA": {"rating": 3, "count": 1}, "HATHA": {"rating": 3, "count": 1}, "GJANA": {"rating": 3, "count": 1},
+        "KLASIKP": {"rating": 3, "count": 1}, "STOT": {"rating": 3, "count": 1}, "REFORMER": {"rating": 3, "count": 1},
+        "KLASIKC": {"rating": 3, "count": 1}, "HIIT": {"rating": 3, "count": 1}, "KRUZNI": {"rating": 3, "count": 1},
+        "TRCANJE": {"rating": 3, "count": 1}, "BICIKL": {"rating": 3, "count": 1}, "STEPENICE": {"rating": 3, "count": 1}
+    }
+    storageSet("ratings", ratings);
 
     //  commentbase
     var comments = {
@@ -40,6 +49,4 @@ window.addEventListener("load", () => {
         "STEPENICE": [[{"vreme": "8:00", "mesta": 20}],[{"vreme": "15:00", "mesta": 20}],[{"vreme": "10:00", "mesta": 20}],[],[{"vreme": "10:00", "mesta": 20},{"vreme": "14:00", "mesta": 20}],[],[{"vreme": "10:00", "mesta": 20}]]
     }
     storageSet("termini", termini);
-
-
 })

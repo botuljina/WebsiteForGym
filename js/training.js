@@ -94,6 +94,31 @@ function initTrainingData() {
         prikaziTermine(training);
     })
     
+    //  draw user ratings
+    document.querySelectorAll(".rating").forEach(element => {
+        drawStars(element.getAttribute("data-training"));
+    })
+
+    //  star clearing and drawing on mouseover
+    document.querySelectorAll(".rating").forEach(element => {
+        element.addEventListener("mouseout", () => drawStars(element.getAttribute("data-training")));
+        element.addEventListener("mouseover", () => clearStars(element.getAttribute("data-training")));
+    })
+
+    //  setRating bind
+    document.querySelectorAll("[data-type=star]").forEach(element => {
+        element.addEventListener("click", function () {
+            var type = this.parentElement.getAttribute("data-training");
+            var rating = this.getAttribute("data-starindex");
+            setRating(type, rating);
+        });
+    })
+
+    //  draw global rating
+    document.querySelectorAll("[data-type=rating]").forEach(element => {
+        var type = element.getAttribute("data-training");
+        drawRating(type);
+    })
     if (storageGet("logged") != null) {
         document.querySelectorAll("[data-type=loginAlert]").forEach(element => element.hidden = true);
     }
@@ -116,6 +141,10 @@ function sortTrainingCards(criteria, order = 1) {
 function addComment(type, text) {
     var author = storageGet("logged");
     if (author == null) return;
+    if (attending(author, type) == false) {
+        alert("Morate pohadjati trening kako biste ostavili komentar");
+        return;
+    }
 
     var comments = storageGet("comments");
     comments[type].push({author, text});
@@ -161,8 +190,8 @@ function renderComments(type) {
 
 
 function rezervisiTermin(tip, i, j) {
-    if (storageGet("logged") == null) return;
-
+    var user = storageGet("logged");
+    if (user == null) return;
     var termini = storageGet("termini");
     var termin = termini[tip][i][j];
     if (termin["mesta"] == 0) {
@@ -170,7 +199,7 @@ function rezervisiTermin(tip, i, j) {
         return;
     }
     var users = storageGet("users");
-    var terminiKorisnika = users.find(element => (element.username === storageGet("logged")))["termini"];
+    var terminiKorisnika = users.find(element => (element.username === user))["termini"];
     terminiKorisnika.push({"trening": tip, "dan": i, "termin": j});
     storageSet("users", users);
 
@@ -248,4 +277,59 @@ function prikaziTermine(type) {
             cardContainer.appendChild(button);
         }
     }
+}
+
+
+function drawStars(type) {
+    var user = storageGet("logged");
+    if (user == null) return;
+    var starContainer = document.querySelector(".rating[data-training="+type+"]");
+    var users = storageGet("users");
+    var rating = users.find(element => element.username = user)["ratings"][type];
+    if (rating == null) return;
+    
+    for (let i = 0; i < rating; i++) starContainer.children[4 - i].innerHTML = "★";
+}
+function clearStars(type) {
+    var starContainer = document.querySelector(".rating[data-training="+type+"]");
+    for (let i = 0; i < 5; i++) starContainer.children[4 - i].innerHTML = "☆";
+}
+function setRating(type, rating) {
+    var user = storageGet("logged");
+    if (user == null) return;
+    if (attending(user, type) == false) {
+        alert("Morate pohadjati trening kako biste ostavili ocenu");
+        return;
+    }
+    var users = storageGet("users");
+
+    var old = users.find(element => element.username = user)["ratings"][type];
+    var first = false;
+    if (old == null) {
+        old = 0;
+        first = true;
+    }
+    var delta = rating - old;
+
+    users.find(element => element.username = user)["ratings"][type] = rating;
+
+    var ratings = storageGet("ratings");
+    ratings[type]["rating"] = (ratings[type]["rating"] * ratings[type]["count"] + delta) / (ratings[type]["count"] + first);
+    if (first) ratings[type]["count"]++;
+    storageSet("users", users);
+    storageSet("ratings", ratings);
+    clearStars(type);
+    drawStars(type);
+    drawRating(type);
+}
+
+function drawRating(type) {
+    document.querySelector("[data-type=rating][data-training="+type+"]").innerHTML = storageGet("ratings")[type]["rating"];
+}
+
+function attending(username, training) {
+    var users = storageGet("users");
+    var user = users.find(element => element.username == username);
+    if (user["termini"].find(termin => termin.trening == training) == null) return false;
+    return true;
 }

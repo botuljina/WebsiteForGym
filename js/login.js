@@ -29,7 +29,12 @@ function register(username, password) {
         alert("Username is taken");
         return;
     }
-    users.push({ username, password, "termini": []});
+    users.push({ username, password, "termini": [], "ratings": {
+        "KARMA": null, "HATHA": null, "GJANA": null,
+        "KLASIKP": null, "STOT": null, "REFORMER": null,
+        "KLASIKC": null, "HIIT": null, "KRUZNI": null,
+        "TRCANJE": null, "BICIKL": null, "STEPENICE": null
+    }});
     storageSet("users", users);
 }
 
