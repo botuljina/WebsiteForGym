@@ -87,11 +87,16 @@ function initTrainingData() {
         renderComments(training);
     })
 
+    //  prikazi nedeljni pregled svih tipova treninga
     var nedeljniPregledi = document.querySelectorAll("[data-type=termini]");
     commentSections.forEach(function (element) {
         let training = element.getAttribute("data-training");
         prikaziTermine(training);
     })
+    
+    if (storageGet("logged") != null) {
+        document.querySelectorAll("[data-type=loginAlert]").forEach(element => element.hidden = true);
+    }
 }
 function sortTrainingCards(criteria, order = 1) {
     //  sort function
