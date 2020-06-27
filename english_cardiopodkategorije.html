@@ -1,0 +1,344 @@
+<html lang="en">
+<head>
+  <title>Cardio Subcategories</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
+  <link rel="stylesheet" href="podkategorije-style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="js/storagePrimer.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/training.js"></script>
+  
+</head>
+<body onload="displayAllSliders()">
+  <!--NAVBAR-->
+  <nav class="navbar navbar-expand-lg navbar" style="background-color: #1D1E22">
+    <a class="navbar-brand" href="english_index.html" style="background-color: #1D1E22">
+        <img src="gym-assets/resizelogo.png" alt="" >
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="english_index.html">Home page<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
+            <div class="dropdown-menu" style="">
+            <a class="dropdown-item" href="english_treninzi.html">List od trainings</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
+              <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
+              <a class="dropdown-item" href="CorePodkategorije.html">Core</a>
+              <a class="dropdown-item active" href="CardioPodkategorije.html">Cardio</a>
+              
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="Nutricionista.html">Nutricionist</a>
+              <a class="dropdown-item" href="Masaze.html">Massage</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                Schedule service</a>
+            <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="">Schedule training</a>
+              <a class="dropdown-item" href="">Schedule masage</a>
+              <a class="dropdown-item" href="">Schedule nutrition</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="#">My account</a>
+        </li>
+        <button type="button" class="btn btn-outline-danger">Sign up!</button>
+       
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+        <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
+        <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+      </form>
+      <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
+      <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
+    </div>
+  </nav>
+<!-- NAVBAR END -->
+<div class="row">
+  <div class="col-4 offset-4 d-flex justify-content-center" style="">
+    <div class="btn-group">
+      <button id="sortABC" data-order="1" type="button" class="btn btn-primary">Name</button>
+      <button id="sortTezina" data-order="1" type="button" class="btn btn-primary">Weight</button>
+      <button id="sortDuzina" data-order="1" type="button" class="btn btn-primary">Length</button>
+    </div>
+  </div>
+</div>
+  <div class="container mt-4" id="TRAININGContainer">
+    <div id="TRCANJEContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg); margin-bottom: 0;" style="position: relative;">
+          <div class="container" >
+              <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"><b>TRAINING DESCRIPTION</b></h4>
+                  
+                  <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                    Like other cardiovascular exercises, walking, running, treadmill improves endurance and gives many other positive health effects.
+                    They enable a smaller impact of the sneaker sole on the surface compared to ordinary running surfaces. This better shock absorption has a positive effect on all joints, especially the knees and lower back.   
+                </div>
+                <div class="col-sm">
+                  <h2 class="display-3" style="text-align: center;color:white;" id ="TRCANJE">RUNNING TAPE</h2>
+                </div>
+                <div class="col-sm"style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"> <b>TRAINING SPECIFICATION</b></h4>
+  
+                  <h4 class="display-5" style="text-align: center;">duration</h4>
+                  <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">20 min</h2></span>
+                  <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">Weight</h4>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+      <a href="#TRCANJEgalerija" data-toggle="collapse"><div class="card-header">Gallery</div></a>
+      <div id="TRCANJEgalerija" class="collapse card-body">
+        <div class="slidercontainer">  
+          <div class="showSlide" id="slide">  
+              <img src="gym-assets/cardioCarousel/1.jpg" />  
+              <div class="content">Treadmills gallery</div>  
+          </div>  
+          <div class="showSlide" id="slider">  
+              <img src="gym-assets/cardioCarousel/2.jpg" />  
+              <div class="content">The pictures are the same</div>  
+          </div>  
+    
+          <div class="showSlide" id="slid">  
+              <img src="gym-assets/cardioCarousel/3.jpg" />  
+              <div class="content">due to the visual display
+              </div>  
+          </div>  
+
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlide(-1)">❮</a>  
+          <a class="right" onclick="nextSlide(1)">❯</a>  
+        </div>
+      </div>
+
+      <a href="#TRCANJEkomentari" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Comments</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
+      <div id="TRCANJEkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="TRCANJE"></div>
+      </div>
+      <a href="#TRCANJEtermini" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Terms</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
+      <div id="TRCANJEtermini" class="collapse card-body">
+        <table class="table table-bordered" data-type="termini" data-training="TRCANJE" style="width: 100%;">
+          
+        </table>
+      </div>
+      <br><br><br>
+    </div>
+
+    <div id="BICIKLContainer">  
+      <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg); margin-bottom: 0;" style="position: relative;">
+          <div class="container" >
+              <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"><b>TRAINING DESCRIPTION</b></h4>
+                  
+                  <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                    Training on a stationary bike is one of the most popular ways to get fit and lose weight.
+                    The muscle groups affected by these workouts are mostly the thighs and hips. You could say lower back and triceps while giving support to the body while driving
+                </div>
+                <div class="col-sm">
+                  <h2 class="display-3" style="text-align: center;color:white;" id ="BICIKL">BICYCLE TRAINING</h2>
+                </div>
+                <div class="col-sm"style="text-align: center;">
+                  <h4 class="display-5" style="text-align: center;color:white;"> <b>TRAINING SPECIFICATION</b></h4>
+  
+                  <h4 class="display-5" style="text-align: center;">duration</h4>
+                  <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">60 min</h2></span>
+                  <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">Weight</h4>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+      
+      <a href="#BICIKLgalerija" data-toggle="collapse"><div class="card-header">Gallery</div></a>
+      <div id="BICIKLgalerija" class="collapse card-body">
+        <div class="slidercontainer">  
+          <div class="showSlide1" id="slider1">  
+              <img src="gym-assets/cardioCarousel/2.jpg" />  
+              <div class="content">Bicycle Training</div>  
+          </div>  
+          <div class="showSlide1" id="slider12">  
+              <img src="gym-assets/cardioCarousel/1.jpg" />  
+              <div class="content">The pictures are the same</div>  
+          </div>  
+    
+          <div class="showSlide1" id="slider13">  
+              <img src="gym-assets/cardioCarousel/3.jpg" />  
+              <div class="content">due to the visual display
+              </div>  
+          </div>  
+
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlides(-1,1)">❮</a>  
+          <a class="right" onclick="nextSlides(1,1)">❯</a>  
+        </div>
+      </div>
+
+      <a href="#BICIKLkomentari" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Comments</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
+      <div id="BICIKLkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="BICIKL"></div>
+      </div>
+      <a href="#BICIKLtermini" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Terms</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
+      <div id="BICIKLtermini" class="collapse card-body">
+        <table class="table table-bordered" data-type="termini" data-training="BICIKL" style="width: 100%;">
+          
+        </table>
+      </div>
+      <br><br><br>
+    </div>
+
+    <div id="STEPENICEContainer">
+      <div class="jumbotron" style="background-image: url(gym-assets/cardio.jpg); margin-bottom: 0;" style="position: relative;">
+        <div class="container" >
+            <div class="row">
+              <div class="col-sm" style="text-align: center;">
+                <h4 class="display-5" style="text-align: center;color:white;"><b>TRAINING DESCRIPTION</b></h4>
+                
+                <p class="text-justify" style="text-align: center; margin-top: 30px; color: white;">
+                    A very good way to lose weight is to combine escalators with another exercise, e.g. with some muscle building exercise. Low-intensity cardio training, when you can work on the stairs, is ideal for weight loss, but it is necessary to allow the body to melt fat even after training. 
+              </div>
+              <div class="col-sm">
+                <h2 class="display-3" style="text-align: center;color:white;" id ="STEPENICE">STAIRS TRAINING</h2>
+              </div>
+              <div class="col-sm"style="text-align: center;">
+                <h4 class="display-5" style="text-align: center;color:white;"> <b>TRAINING SPECIFICATION</b></h4>
+
+                <h4 class="display-5" style="text-align: center;">duration</h4>
+                <span class="badge badge-warning" style="width: 50%; height: 40px; margin-top: 10;"><h2 style="margin-bottom: 10px;">45 min</h2></span>
+                <h4 class="display-5" style="text-align: center; margin-top: 10px; margin-bottom:30px ;">Weight</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+      <a href="#STEPENICEgalerija" data-toggle="collapse"><div class="card-header">Gallery</div></a>
+      <div id="STEPENICEgalerija" class="collapse card-body">
+        <div class="slidercontainer" onload="displaySlidesOther2(1,2)">  
+          <div class="showSlide2" id="slider1">  
+              <img src="gym-assets/cardioCarousel/3.jpg" />  
+              <div class="content">Training</div>  
+          </div>  
+          <div class="showSlide2" id="slider12">  
+              <img src="gym-assets/cardioCarousel/1.jpg" />  
+              <div class="content">The pictures are the same</div>  
+          </div>  
+    
+          <div class="showSlide2" id="slider13">  
+              <img src="gym-assets/cardioCarousel/2.jpg" />  
+              <div class="content">due to the visual display
+              </div>  
+          </div>  
+
+          <!-- Navigation arrows -->  
+          <a class="left" onclick="nextSlides(-1,2)">❮</a>  
+          <a class="right" onclick="nextSlides(1,2)">❯</a>  
+        </div> 
+      </div>
+
+      <a href="#STEPENICEkomentari" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Comments</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
+      <div id="STEPENICEkomentari" class="collapse card-body">
+        <div data-type="komentari" data-training="STEPENICE"></div>
+      </div>
+      <a href="#STEPENICEtermini" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Terms</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
+      <div id="STEPENICEtermini" class="collapse card-body">
+        <table class="table table-bordered" data-type="termini" data-training="STEPENICE" style="width: 100%;">
+          
+        </table>
+      </div>
+      <br><br><br>
+    </div>
+  </div>
+
+<!--FOOTER START-->
+<div class="w-100 p-3" style="background-color: #1D1E22">
+    <footer class="page-footer font-small stylish-color-dark pt-4">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+      
+            <!-- 1.RED -->
+            <div class="row">
+                <!-- 1.KOLONA -->
+                <div class="col-md-4 mx-auto">          
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">
+                        Gym Iron</h5>
+                    <p>"Physical fitness is not only one of the most important keys to a healthy body, it is the basis of dynamic and creative intellectual activity."</p>   
+                </div>
+                <!-- 2.KOLONA -->
+                <div class="col-md-2 mx-auto"></div>
+                <!-- 3.KOLONA -->
+                <div class="col-md-2 mx-auto"></div>
+                <!-- 4.KOLONA -->
+                <div class="col-md-2 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Navigation</h5>
+                    <ul class="list-unstyled">
+                    <li>
+                    <a href="english_index.html">Home page</a>
+                    </li>
+                    <li>
+                    <a href="english_treninzi.html">List of trainings</a>
+                    </li>
+                    <li>
+                    <a href="">My account</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>        
+        </div>         
+        <hr> 
+        <!--Mesto za dugme-->          
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1">Register for free!</h5>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="btn btn-danger btn-rounded">SIGN UP</a>
+          </li>
+        </ul>       
+        <hr>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">  © 2020 Copyright: Luka Simovic,Konstantin Jaredic <a href="https://www.etf.bg.ac.rs/sr/studiranje/osnovne-akademske-studije/softversko-inzenjerstvo-si">Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu </a></div>
+    </footer>
+</div>
+<!--FOOTER END-->
+<script src="podkategorije-javascript.js"></script>   
+ <!-- Scripts -->
+ <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+ <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+ <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+ <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+ <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+ <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
