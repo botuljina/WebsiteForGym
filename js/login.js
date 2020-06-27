@@ -1,23 +1,7 @@
 var users = null;
-window.addEventListener("load", initLoginData);
+window.addEventListener("load", initLoginElements);
 
-function storageGet(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
-function storageSet(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
-}
-
-function initLoginData() {
-    if (storageGet("version 1.1") == null) {
-        localStorage.clear();
-        storageSet("version 1.1", true);
-    }
-    users = JSON.parse(localStorage.getItem("users"));
-    if (users == null) {
-        users = [];
-        localStorage.setItem("users", JSON.stringify(users));
-    }
+function initLoginElements() {
     if (storageGet("logged") == null)
         document.getElementById("logoutButton").hidden = true;
     else {
@@ -40,41 +24,26 @@ function initLoginData() {
     });
 }
 function register(username, password) {
-    var users = JSON.parse(localStorage.getItem("users"));
+    var users = storageGet("users");
     if (users.find(element => element.username === username) !== undefined) {
         alert("Username is taken");
         return;
     }
-    users.push({ username, password });
-    localStorage.setItem("users", JSON.stringify(users));
+    users.push({ username, password, "termini": []});
+    storageSet("users", users);
 }
 
 function login(username, password) {
-    var users = JSON.parse(localStorage.getItem("users"));
+    var users = storageGet("users");
     if (users.find(element => (element.username === username && element.password === password)) === undefined) {
         alert("Username/password combination is incorrect");
         return;
     }
     storageSet("logged", username);
-    //localStorage.setItem("logged", username);
     location.reload();
-    /*
-    document.getElementById("logoutButton").hidden = false;
-    document.getElementById("loginButton").hidden = true;
-    document.getElementById("registerButton").hidden = true;
-    document.getElementById("usernameField").hidden = true;
-    document.getElementById("passwdField").hidden = true;
-    */
 }
 
 function logout() {
-    localStorage.setItem("logged", null);
+    storageSet("logged", null);
     location.reload();
-    /*
-    document.getElementById("logoutButton").hidden = true;
-    document.getElementById("loginButton").hidden = false;
-    document.getElementById("registerButton").hidden = false;
-    document.getElementById("usernameField").hidden = false;
-    document.getElementById("passwdField").hidden = false;
-    */
 }
