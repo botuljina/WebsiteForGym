@@ -1,8 +1,9 @@
 window.addEventListener("load", () => {
-    document.getElementById("potvrdaForme").addEventListener("click", savePDF); 
+    var opis = document.querySelector("label[for=opisProblema]").innerHTML;
+    document.getElementById("potvrdaForme").addEventListener("click", () => savePDF(opis)); 
 })
 
-function savePDF() {
+function savePDF(opis) {
     
     var form = document.forms["onlyForm"];
     var rows = [
@@ -11,7 +12,7 @@ function savePDF() {
         ["Email", form["formMail"].value],
         ["Broj telefona", form["formNumber"].value],
         ["Datum", form["formDate"].value],
-        ["Opis problema", form["opisProblema"].value]
+        [opis, form["opisProblema"].value]
     ];
     var colls = [
         {

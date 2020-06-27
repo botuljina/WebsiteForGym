@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
-
+  <link rel="stylesheet" href="css/modal.css">
+  <script src="js/jspdf.min.js"></script>
+  <script src="js/jspdf.plugin.autotable.js"></script>
+  <script src="js/savePDF.js"></script>
 
 </head>
 <body>
@@ -259,7 +262,11 @@
        
       
       </tbody>
-    </table> 
+    </table>
+    <br>
+    <p class="lead" style="text-align: center;">
+      <a class="btn btn-success" href="#popup1">Zakazivanje termina</a>
+     </p>
   </div>
 <!-- On rows -->
   
@@ -317,6 +324,41 @@
       <div class="footer-copyright text-center py-3">  © 2020 Copyright: Luka Simovic,Konstantin Jaredic <a href="https://www.etf.bg.ac.rs/sr/studiranje/osnovne-akademske-studije/softversko-inzenjerstvo-si">Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu </a></div>
   </footer>
 </div>
+<div id="popup1" class="overlay">
+  <div class="popup modal-content">
+    <h2>Zakazite termin</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+      <form name="onlyForm">
+        <div class="form-group">
+          <label for="formName">Ime</label>
+          <input type="text" class="form-control" placeholder="Unesite ime" id="formName">
+        </div>
+        <div class="form-group">
+          <label for="formSurname">Prezime</label>
+          <input type="text" class="form-control" placeholder="Unesite prezime" id="formSurname">
+        </div>
+        <div class="form-group">
+          <label for="formMail">Email</label>
+          <input type="email" class="form-control" id="formMail" aria-describedby="emailHelp" placeholder="Unesite adresu">
+        </div>
+        <div class="form-group">
+          <label for="formNumber">Kontakt telefon</label>
+          <input type="text" class="form-control" placeholder="Unesite broj" id="formNumber">
+        </div>
+        <div class="form-group">
+          <label for="formDate">Datum termina</label>
+          <input type="date" class="form-control" id="formDate" min="2020-01-01" max="2021-12-31">
+        </div>
+        <div class="form-group">
+          <label for="opisProblema">Tip masaže</label>
+          <textarea class="form-control" id="opisProblema" rows="3"></textarea>
+        </div>
+        <button class="btn btn-success" id="potvrdaForme">Zakazi</button>
+      </div>
+      
+    </div>
+  </div>
  <!-- Scripts -->
  <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
  <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
