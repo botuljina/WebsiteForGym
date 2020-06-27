@@ -4,7 +4,10 @@ window.addEventListener("load", () => {
 })
 
 function savePDF(opis) {
-    
+    if (storageGet("logged") == null) {
+      alert("Ulogujte se kako biste omogucili zakazivanja");
+      return;
+    }
     var form = document.forms["onlyForm"];
     var rows = [
         ["Ime", form["formName"].value],
