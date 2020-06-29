@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
     prikaziMojeTermine();
     prikaziMojeKomentare();
+    prikaziMojeOcene();
 });
 
 
