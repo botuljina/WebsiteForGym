@@ -228,8 +228,6 @@ function otkaziRezervaciju(tip, i, j) {
 
     termin["mesta"]++;
     storageSet("termini", termini);
-    
-    prikaziTermine(tip);
 }
 function getRow(table, i) {
     while (table.rows.length < i + 1) table.insertRow();
@@ -249,9 +247,7 @@ function prikaziTermine(type) {
         table.rows[0].cells[i].style = "width: 14%";
         table.rows[0].cells[i].innerHTML = "<h4>" + dani[i] + "</h4>";
     }
-    for (let i = 0; i < 5; i++) table.insertRow();
     var termini = storageGet("termini");
-    console.log(termini);
     for (let i = 0; i < 7; i++) {
         for (let j = 0; j < termini[type][i].length; j++) {
             let cardContainer = getCell(getRow(table, j+1), i);//table.rows[j + 1].insertCell();
@@ -266,6 +262,7 @@ function prikaziTermine(type) {
                 button.innerText = "otkazi";
                 button.addEventListener("click", ()=>{
                     otkaziRezervaciju(type, i, j);
+                    prikaziTermine(type);
                 });
             }
             else {
