@@ -6,7 +6,7 @@ function storageSet(key, value) {
 }
 
 window.addEventListener("load", () => {
-    var version = "2.4";
+    var version = "4.0";
     if (storageGet("version") === version) return;
     localStorage.clear();
     storageSet("version", version);
