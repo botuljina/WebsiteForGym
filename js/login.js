@@ -2,8 +2,10 @@ var users = null;
 window.addEventListener("load", initLoginElements);
 
 function initLoginElements() {
-    if (storageGet("logged") == null)
+    if (storageGet("logged") == null) {
         document.getElementById("logoutButton").hidden = true;
+        document.getElementById("MojNalogDugme").hidden = true;
+    }
     else {
         document.getElementById("loginButton").hidden = true;
         document.getElementById("usernameField").hidden = true;
