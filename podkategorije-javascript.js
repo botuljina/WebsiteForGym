@@ -44,3 +44,31 @@ var slide_index = 1;
             displaySlidesOther2(1,1);
             displaySlidesOther2(1,2);
         }
+        var globalVideoInd = 0;
+        function nextVideo(n)
+        {
+            globalVideoInd+=n;
+            if(globalVideoInd==3)
+            {
+                globalVideoInd=0; 
+            }
+            if(globalVideoInd==-1)
+            {
+                globalVideoInd=2;
+            }
+            switch(globalVideoInd)
+            {
+                case 0: 
+                document.getElementById("video").setAttribute("href","https://www.youtube.com/watch?v=ZABBM_GionE");
+                document.getElementById("videoimg").setAttribute("src","gym-assets/cardioCarousel/1.jpg");  
+                break;
+                case 1: 
+                document.getElementById("video").setAttribute("href","https://www.youtube.com/watch?v=SaiAkZM3R2g");
+                document.getElementById("videoimg").setAttribute("src","gym-assets/cardioCarousel/2.jpg");  
+                break;
+                case 2: 
+                document.getElementById("video").setAttribute("href","https://www.youtube.com/watch?v=tNsc5GIUPIY");
+                document.getElementById("videoimg").setAttribute("src","gym-assets/cardioCarousel/3.jpg");  
+                break;
+            }
+        }
