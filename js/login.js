@@ -24,6 +24,7 @@ function initLoginElements() {
     });
 }
 function register(username, password) {
+   
     var users = storageGet("users");
     if (users.find(element => element.username === username) !== undefined) {
         alert("Username is taken");
@@ -36,6 +37,12 @@ function register(username, password) {
         "TRCANJE": null, "BICIKL": null, "STEPENICE": null
     }});
     storageSet("users", users);
+    if(document.getElementById('registerbtn').innerText =="REGISTRUJ SE!")
+    {
+        window.location.replace("index.html");
+    }else{
+        window.location.replace("english_index.html");
+    }
 }
 
 function login(username, password) {
