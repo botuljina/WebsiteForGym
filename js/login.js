@@ -24,7 +24,8 @@ function register(username, password) {
    
     var users = storageGet("users");
     if (users.find(element => element.username === username) !== undefined) {
-        alert("Username is taken");
+        if (isEnglish()) alert("Username is taken");
+        else alert("Korisnicko ime je zauzeto");
         return;
     }
     users.push({ username, password, "termini": [], "ratings": {
@@ -45,7 +46,8 @@ function register(username, password) {
 function login(username, password) {
     var users = storageGet("users");
     if (users.find(element => (element.username === username && element.password === password)) === undefined) {
-        alert("Username/password combination is incorrect");
+        if (isEnglish()) alert("Username/password combination is incorrect");
+        else alert("Pogresno korisnicko ime i/ili lozinka");
         return;
     }
     storageSet("logged", username);
@@ -54,5 +56,10 @@ function login(username, password) {
 
 function logout() {
     storageSet("logged", null);
-    location.reload();
+    if (location.pathname.includes("MojNalog")) {
+        console.log("kurac");
+        window.open("index.html","_self");
+        console.log("picka");
+    }
+    else location.reload();
 }

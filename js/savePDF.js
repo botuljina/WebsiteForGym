@@ -5,25 +5,20 @@ window.addEventListener("load", () => {
 
 function savePDF(opis) {
     if (storageGet("logged") == null) {
-      alert("Ulogujte se kako biste omogucili zakazivanja");
+      if (isEnglish()) alert("Log in to make reservations");
+      else alert("Ulogujte se kako biste omogucili zakazivanja");
       return;
     }
     var form = document.forms["onlyForm"];
+    var eng = isEnglish();
     var rows = [
-        ["Ime", form["formName"].value],
-        ["Prezime", form["formSurname"].value],
+        [eng?"Name" : "Ime", form["formName"].value],
+        [eng?"Surname" : "Prezime", form["formSurname"].value],
         ["Email", form["formMail"].value],
-        ["Broj telefona", form["formNumber"].value],
-        ["Datum", form["formDate"].value],
+        [eng?"Phone number" : "Broj telefona", form["formNumber"].value],
+        [eng?"Date" : "Datum", form["formDate"].value],
         [opis, form["opisProblema"].value]
     ];
-    var colls = [
-        {
-          content: 'Zahtev',
-          colSpan: 2,
-          styles: { halign: 'center', fillColor: [22, 160, 133] },
-        },
-      ];
     
 
     var pdf = new jsPDF('l');
@@ -34,7 +29,7 @@ function savePDF(opis) {
         head: [
           [
             {
-              content: 'Zahtev za pregled',
+              content: eng?"Appointment" : "Zahtev za pregled",
               colSpan: 2,
               styles: { halign: 'center', fillColor: [22, 160, 133] },
             },
@@ -46,5 +41,5 @@ function savePDF(opis) {
         columnStyles: { 1: { cellWidth: 'auto' } },
       })
   
-    pdf.save('zahtev.pdf');
+    pdf.save(eng?"appointment.pdf" : "zahtev.pdf");
 };
