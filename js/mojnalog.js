@@ -37,6 +37,8 @@ function prikaziMojeTermine() {
     
     table.innerHTML = "";
     const dani = ["Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"];
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    if (window.location.pathname.includes("english")) dani = days;
     table.insertRow();
     for (let i = 0; i < 7; i++) {
         table.rows[0].insertCell();

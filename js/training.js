@@ -61,6 +61,9 @@ const trainingData = {
     },
 };
 
+function isEnglish() {
+    return window.location.pathname.includes("english");
+}
 
 window.addEventListener("load", initTrainingData);
 function initTrainingData() {
@@ -142,7 +145,8 @@ function addComment(type, text) {
     var author = storageGet("logged");
     if (author == null) return;
     if (attending(author, type) == false) {
-        alert("Morate pohadjati trening kako biste ostavili komentar");
+        if (isEnglish()) alert("You have to be attending the training in order to leave a comment");
+        else alert("Morate pohadjati trening kako biste ostavili komentar");
         return;
     }
 
@@ -152,6 +156,7 @@ function addComment(type, text) {
     renderComments(type);
 }
 function renderComments(type) {
+    var english = isEnglish();
     var container = document.querySelector("#" + type + "Container * [data-type=komentari]");
     container.innerHTML = "";
     if (container == null) return;
@@ -162,7 +167,7 @@ function renderComments(type) {
         var text = document.createElement("h4");
         text.style = "word-wrap: break-word;";
         var author = document.createElement("p");
-        author.innerText = "by: " + element.author;
+        author.innerText = (english ? "user: " : "korisnik: ") + element.author;
         text.innerText = element.text;
         comment.appendChild(text);
         comment.appendChild(author);
@@ -170,7 +175,7 @@ function renderComments(type) {
     })
     if (comments[type].length == 0) {
         var message = document.createElement("h4");
-        message.innerText = "Nema komentara za ovaj trening";
+        message.innerText = english ? "No comments for this training" : "Nema komentara za ovaj trening";
         container.appendChild(message);
     }
     if (storageGet("logged") == null) return;
@@ -178,7 +183,7 @@ function renderComments(type) {
     createComment.innerHTML = "<textarea id='commentTextArea" + type + "' rows='3' cols='60'></textarea><br>";
     var post = document.createElement("button");
     post.classList.add("btn", "btn-secondary");
-    post.innerText = "post";
+    post.innerText = english ? "post" : "objavi";
     createComment.appendChild(post);
     post.addEventListener("click", ()=> {
         var text = document.getElementById('commentTextArea' + type).value;
@@ -238,9 +243,12 @@ function getCell(row, i) {
     return row.cells[i];
 }
 function prikaziTermine(type) {
+    var english = isEnglish();
     var table = document.querySelector("#" + type + "Container * [data-type=termini]");
     table.innerHTML = "";
-    const dani = ["Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"];
+    var dani = ["Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"];
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    if (english) dani = days;
     table.insertRow();
     for (let i = 0; i < 7; i++) {
         table.rows[0].insertCell();
@@ -259,14 +267,14 @@ function prikaziTermine(type) {
             var users = storageGet("users");
             var terminiKorisnika = users.find(element => (element.username === storageGet("logged")))["termini"];
             if (terminiKorisnika.find(element => (element.trening == type && element.dan == i && element.termin == j))) {
-                button.innerText = "otkazi";
+                button.innerText = english ? "cancel" : "otkazi";
                 button.addEventListener("click", ()=>{
                     otkaziRezervaciju(type, i, j);
                     prikaziTermine(type);
                 });
             }
             else {
-                button.innerText = "rezervisi";
+                button.innerText = english ? "reserve" : "rezervisi";
                 button.addEventListener("click", ()=>{
                     rezervisiTermin(type, i, j);
                 });
@@ -295,7 +303,8 @@ function setRating(type, rating) {
     var user = storageGet("logged");
     if (user == null) return;
     if (attending(user, type) == false) {
-        alert("Morate pohadjati trening kako biste ostavili ocenu");
+        if (isEnglish()) alert("You have to be attending the training in order to leave a rating")
+        else alert("Morate pohadjati trening kako biste ostavili ocenu");
         return;
     }
     var users = storageGet("users");
