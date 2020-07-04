@@ -35,10 +35,11 @@ function prikaziMojeTermine() {
     
     var table = document.getElementById("termini");
     
+    var english = isEnglish();
     table.innerHTML = "";
-    const dani = ["Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"];
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    if (window.location.pathname.includes("english")) dani = days;
+    var dani = ["Ponedeljak", "Utorak", "Sreda", "Cetvrtak", "Petak", "Subota", "Nedelja"];
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    if (english) dani = days;
     table.insertRow();
     for (let i = 0; i < 7; i++) {
         table.rows[0].insertCell();
@@ -54,7 +55,7 @@ function prikaziMojeTermine() {
             let button = document.createElement("button");
             button.classList.add("btn", "btn-secondary");
             button.style = 'width:100%; border: 0';
-            button.innerText = "otkazi";
+            button.innerText = english ? "cancel" : "otkazi";
             button.addEventListener("click", ()=>{
                 otkaziRezervaciju(sorted[i][j]["trening"], sorted[i][j]["dan"], sorted[i][j]["termin"]);
                 prikaziMojeTermine();
@@ -81,7 +82,7 @@ function prikaziMojeKomentare() {
         var text = document.createElement("h4");
         text.style = "word-wrap: break-word;";
         var trening = document.createElement("p");
-        trening.innerText = "on: " + element[0];
+        trening.innerText = (isEnglish() ? "on: " : "na: ") + element[0];
         text.innerText = element[1];
         comment.appendChild(text);
         comment.appendChild(trening);

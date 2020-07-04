@@ -4,6 +4,9 @@ function storageGet(key) {
 function storageSet(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
+function isEnglish() {
+    return window.location.pathname.includes("english");
+}
 
 window.addEventListener("load", () => {
     var version = "4.0";

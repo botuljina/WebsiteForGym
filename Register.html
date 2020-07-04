@@ -22,12 +22,12 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Početna strana<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown active">
+          <li class="nav-item dropdown  active">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Treninzi</a>
               <div class="dropdown-menu" style="">
-              <a class="dropdown-item active" href="Treninzi.html">Spisak treninga</a>
+              <a class="dropdown-item" href="Treninzi.html">Spisak treninga</a>
               <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
+                <a class="dropdown-item  active" href="YogaPodkategorije.html">Yoga</a>
                 <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
                 <a class="dropdown-item" href="CorePodkategorije.html">Core</a>
                 <a class="dropdown-item" href="CardioPodkategorije.html">Cardio</a>
@@ -53,18 +53,19 @@
             </li>
            
           <li class="nav-item">
-            <a class="nav-link" href="#">Moj nalog</a>
+            <a class="nav-link" href="MojNalog.html">Moj nalog</a>
           </li>
-          <button type="button" class="btn btn-outline-danger">REGISTRUJ SE!</button>
+          <a id="registerButtonRedirect" href="Register.html"><button type="button" class="btn btn-outline-danger">REGISTRUJ SE!</button></a>
          
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
-          <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
-          <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+          <input id="usernameField" class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+          <input id="passwdField" class="form-control mr-sm-2" type="password" placeholder="PASSWORD">
+          <button id="loginButton" type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+          <button id="logoutButton" type="button" class="btn btn-danger" style="margin-right: 5px;">LOGOUT</button>
         </form>
         <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
-        <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
       </div>
     </nav>
   <!-- NAVBAR END -->

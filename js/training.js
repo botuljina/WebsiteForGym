@@ -61,9 +61,7 @@ const trainingData = {
     },
 };
 
-function isEnglish() {
-    return window.location.pathname.includes("english");
-}
+
 
 window.addEventListener("load", initTrainingData);
 function initTrainingData() {

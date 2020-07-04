@@ -8,14 +8,9 @@ function initLoginElements() {
         document.getElementById("loginButton").hidden = true;
         document.getElementById("usernameField").hidden = true;
         document.getElementById("passwdField").hidden = true;
-        document.getElementById("registerButton").hidden = true;
+        document.getElementById("registerButtonRedirect").hidden = true;
     }
-        
-    document.getElementById("registerButton").addEventListener("click", ()=>{
-        var username = document.getElementById("usernameField").value;
-        var passwd = document.getElementById("passwdField").value;
-        register(username, passwd);
-    })
+    
     document.getElementById("logoutButton").addEventListener("click", logout);
     document.getElementById("loginButton").addEventListener("click", ()=>{
         var username = document.getElementById("usernameField").value;
