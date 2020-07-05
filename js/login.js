@@ -57,9 +57,8 @@ function login(username, password) {
 function logout() {
     storageSet("logged", null);
     if (location.pathname.includes("MojNalog")) {
-        console.log("kurac");
-        window.open("index.html","_self");
-        console.log("picka");
+        if (isEnglish()) window.open("english_index.html","_self");
+        else window.open("index.html","_self");
     }
     else location.reload();
 }

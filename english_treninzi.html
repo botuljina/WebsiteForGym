@@ -4,70 +4,70 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
-
+  <script src="js/storagePrimer.js"></script>
+  <script src="js/login.js"></script>
 
 </head>
 <body>
      <!--NAVBAR-->
-     <nav class="navbar navbar-expand-lg navbar" style="background-color: #1D1E22">
-        <a class="navbar-brand" href="english_index.html" style="background-color: #1D1E22">
-            <img src="gym-assets/resizelogo.png" alt="" >
-          </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="english_index.html">Home page<span class="sr-only">(current)</span></a>
+  <nav class="navbar navbar-expand-lg navbar" style="background-color: #1D1E22">
+      <a class="navbar-brand" href="english_index.html" style="background-color: #1D1E22">
+          <img src="gym-assets/resizelogo.png" alt="" >
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="english_index.html">Home page<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
+              <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="english_treninzi.html">Training list</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="english_yogapodkategorije.html">Yoga</a>
+                <a class="dropdown-item" href="english_pilatespodkategorije.html">Pilates</a>
+                <a class="dropdown-item" href="english_corepodkategorije.html">Core</a>
+                <a class="dropdown-item" href="english_cardiopodkategorije.html">Cardio</a>        
+              </div>            
             </li>
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
-                <div class="dropdown-menu" style="">
-                <a class="dropdown-item active" href="english_treninzi.html">List od trainings</a>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+              <div class="dropdown-menu" style="">
+                <a class="dropdown-item" href="english_nutricionista.html">Nutritionist</a>
+                <a class="dropdown-item" href="english_masaze.html">Massage</a>
                 <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
-                  <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
-                  <a class="dropdown-item" href="CorePodkategorije.html">Core</a>
-                  <a class="dropdown-item" href="CardioPodkategorije.html">Cardio</a>
-                  
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
-                <div class="dropdown-menu" style="">
-                  <a class="dropdown-item" href="Nutricionista.html">Nutricionist</a>
-                  <a class="dropdown-item" href="Masaze.html">Massage</a>
-                  <div class="dropdown-divider"></div>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                    Schedule service</a>
-                <div class="dropdown-menu" style="">
-                  <a class="dropdown-item" href="">Schedule training</a>
-                  <a class="dropdown-item" href="">Schedule masage</a>
-                  <a class="dropdown-item" href="">Schedule nutrition</a>
-                  <div class="dropdown-divider"></div>
-                </div>
-              </li>
-             
-            <li class="nav-item">
-              <a class="nav-link" href="#">My account</a>
+              </div>
             </li>
-            <button type="button" class="btn btn-outline-danger">Sign up!</button>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Schedule service</a>
+              <div class="dropdown-menu" style="">
+                <a class="dropdown-item" href="english_masaze.html#popup1">Schedule massage</a>
+                <a class="dropdown-item" href="english_nutricionista.html#popup1">Schedule nutritionist</a>
+                <div class="dropdown-divider"></div>
+              </div>
+            </li>
            
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
-            <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
-            <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
-          </form>
-          <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
-          <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
-        </div>
-      </nav>
+          <li class="nav-item">
+            <a id="MojNalogDugme" class="nav-link" href="english_MojNalog.html">My account</a>
+          </li>
+          <a id="registerButtonRedirect" href="english_Register.html"><button type="button" class="btn btn-outline-danger">REGISTER!</button></a>
+         
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input id="usernameField" class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+          <input id="passwdField" class="form-control mr-sm-2" type="password" placeholder="PASSWORD">
+          <button id="loginButton" type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+          <button id="logoutButton" type="button" class="btn btn-danger" style="margin-right: 5px;">LOGOUT</button>
+        </form>
+        <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
+      </div>
+  </nav>
     <!-- NAVBAR END -->
       
 

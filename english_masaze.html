@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
-
+  <script src="js/storagePrimer.js"></script>
+  <script src="js/login.js"></script>
 
 </head>
 <body>
@@ -26,47 +27,46 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
             <div class="dropdown-menu" style="">
-            <a class="dropdown-item" href="english_treninzi.html">List od trainings</a>
+            <a class="dropdown-item" href="english_treninzi.html">Training list</a>
             <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="YogaPodkategorije.html">Yoga</a>
-              <a class="dropdown-item" href="PilatesPodkategorije.html">Pilates</a>
-              <a class="dropdown-item" href="CorePodkategorije.html">Core</a>
-              <a class="dropdown-item" href="CardioPodkategorije.html">Cardio</a>
-              
-            </div>
+              <a class="dropdown-item" href="english_yogapodkategorije.html">Yoga</a>
+              <a class="dropdown-item" href="english_pilatespodkategorije.html">Pilates</a>
+              <a class="dropdown-item" href="english_corepodkategorije.html">Core</a>
+              <a class="dropdown-item" href="english_cardiopodkategorije.html">Cardio</a>        
+            </div>            
           </li>
+        
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" style="">
-              <a class="dropdown-item" href="Nutricionista.html">Nutricionist</a>
-              <a class="dropdown-item" href="Masaze.html">Massage</a>
+              <a class="dropdown-item" href="english_nutricionista.html">Nutritionist</a>
+              <a class="dropdown-item" href="english_masaze.html">Massage</a>
               <div class="dropdown-divider"></div>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                Schedule service</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Schedule service</a>
             <div class="dropdown-menu" style="">
-              <a class="dropdown-item" href="">Schedule training</a>
-              <a class="dropdown-item" href="">Schedule masage</a>
-              <a class="dropdown-item" href="">Schedule nutrition</a>
+              <a class="dropdown-item" href="english_masaze.html#popup1">Schedule massage</a>
+              <a class="dropdown-item" href="english_nutricionista.html#popup1">Schedule nutritionist</a>
               <div class="dropdown-divider"></div>
             </div>
           </li>
          
         <li class="nav-item">
-          <a class="nav-link" href="#">My account</a>
+          <a id="MojNalogDugme" class="nav-link" href="english_MojNalog.html">My account</a>
         </li>
-        <button type="button" class="btn btn-outline-danger">Sign up!</button>
+        <a id="registerButtonRedirect" href="english_Register.html"><button type="button" class="btn btn-outline-danger">REGISTER!</button></a>
        
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="USERNAME">
-        <input class="form-control mr-sm-2" type="text" placeholder="PASSWORD">
-        <button type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+        <input id="usernameField" class="form-control mr-sm-2" type="text" placeholder="USERNAME">
+        <input id="passwdField" class="form-control mr-sm-2" type="password" placeholder="PASSWORD">
+        <button id="loginButton" type="button" class="btn btn-warning" style="margin-right: 5px;">LOGIN</button>
+        <button id="logoutButton" type="button" class="btn btn-danger" style="margin-right: 5px;">LOGOUT</button>
       </form>
       <button type="button" class="btn btn-outline-primary" onclick="location.href='index.html';">SR</button>
-      <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
+          <button type="button" class="btn btn-outline-primary" onclick="location.href='english_index.html';">EN</button>
     </div>
   </nav>
 <!-- NAVBAR END -->
