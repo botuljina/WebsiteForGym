@@ -10,6 +10,16 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/fontawesome-all.css" rel="stylesheet">
+   <link href="css/swiper.css" rel="stylesheet">
+   <link href="css/magnific-popup.css" rel="stylesheet">
+   <link href="css/styles.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
+
   <script src="js/storagePrimer.js"></script>
   <script src="js/login.js"></script>
   <script src="js/training.js"></script>
@@ -27,10 +37,10 @@
   
     <div class="collapse navbar-collapse" id="navbarColor01" style="background-color: #1D1E22">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="english_index.html">Home page<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Trainings</a>
             <div class="dropdown-menu" style="">
             <a class="dropdown-item" href="english_treninzi.html">Training list</a>
@@ -38,7 +48,7 @@
               <a class="dropdown-item" href="english_yogapodkategorije.html">Yoga</a>
               <a class="dropdown-item" href="english_pilatespodkategorije.html">Pilates</a>
               <a class="dropdown-item" href="english_corepodkategorije.html">Core</a>
-              <a class="dropdown-item" href="english_cardiopodkategorije.html">Cardio</a>        
+              <a class="dropdown-item active" href="english_cardiopodkategorije.html">Cardio</a>        
             </div>            
           </li>
         
@@ -142,6 +152,43 @@
           <a class="right" onclick="nextSlide(1)">❯</a>  
         </div>
       </div>
+
+      <a href="#TRCANJEvideogalerija0" data-toggle="collapse"><div class="card-header">Video gallery</div></a>
+      <div id="TRCANJEvideogalerija0" class="collapse card-body">
+        <div class="slidercontainer">  
+          <!-- Video -->
+    <div id="preview" class="basic-1" style="background-image: url(gym-assets/indexImages/download-background.jpg);" >
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+
+                  <!-- Video Preview -->
+                  <div class="image-container">
+                      <div class="video-wrapper">
+                          <a id="video0" class="popup-youtube" href="https://www.youtube.com/watch?v=n4I_fmegTRk" data-effect="fadeIn">
+                              <img id="videoimg0" class="img-fluid" src="gym-assets\indexImages\video-frame.jpg" alt="alternative">
+                              <span class="video-play-button">
+                                  <span></span>
+                              </span>
+                          </a>
+                      </div> <!-- end of video-wrapper -->
+                 
+                  </div> <!-- end of image-container -->
+                  <!-- end of video preview -->
+
+              </div> <!-- end of col -->
+          </div> <!-- end of row -->
+      </div> <!-- end of container -->
+  </div> <!-- end of basic-1 -->
+  <!-- end of video -->
+
+<!-- Navigation arrows -->  
+<a class="left" onclick="next_Video(-1,0)">❮</a>  
+<a class="right" onclick="next_Video(1,0)">❯</a>  
+        </div>
+      </div>
+
+
       <a href="#TRCANJEkomentari" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Comments</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
       <div id="TRCANJEkomentari" class="collapse card-body">
         <div data-type="komentari" data-training="TRCANJE"></div>
@@ -213,6 +260,42 @@
         </div>
       </div>
 
+      <a href="#TRCANJEvideogalerija1" data-toggle="collapse"><div class="card-header">Video gallery</div></a>
+      <div id="TRCANJEvideogalerija1" class="collapse card-body">
+        <div class="slidercontainer">  
+          <!-- Video -->
+    <div id="preview" class="basic-1" style="background-image: url(gym-assets/indexImages/download-background.jpg);" >
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+
+                  <!-- Video Preview -->
+                  <div class="image-container">
+                      <div class="video-wrapper">
+                          <a id="video1" class="popup-youtube" href="https://www.youtube.com/watch?v=n4I_fmegTRk" data-effect="fadeIn">
+                              <img id="videoimg1" class="img-fluid" src="gym-assets\indexImages\video-frame.jpg" alt="alternative">
+                              <span class="video-play-button">
+                                  <span></span>
+                              </span>
+                          </a>
+                      </div> <!-- end of video-wrapper -->
+                 
+                  </div> <!-- end of image-container -->
+                  <!-- end of video preview -->
+
+              </div> <!-- end of col -->
+          </div> <!-- end of row -->
+      </div> <!-- end of container -->
+  </div> <!-- end of basic-1 -->
+  <!-- end of video -->
+
+<!-- Navigation arrows -->  
+<a class="left" onclick="next_Video(-1,1)">❮</a>  
+<a class="right" onclick="next_Video(1,1)">❯</a>  
+        </div>
+      </div>
+
+
       <a href="#BICIKLkomentari" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Comments</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
       <div id="BICIKLkomentari" class="collapse card-body">
         <div data-type="komentari" data-training="BICIKL"></div>
@@ -282,6 +365,42 @@
         </div> 
       </div>
 
+      <a href="#TRCANJEvideogalerija2" data-toggle="collapse"><div class="card-header">Video gallery</div></a>
+      <div id="TRCANJEvideogalerija2" class="collapse card-body">
+        <div class="slidercontainer">  
+          <!-- Video -->
+    <div id="preview" class="basic-1" style="background-image: url(gym-assets/indexImages/download-background.jpg);" >
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+
+                  <!-- Video Preview -->
+                  <div class="image-container">
+                      <div class="video-wrapper">
+                          <a id="video2" class="popup-youtube" href="https://www.youtube.com/watch?v=n4I_fmegTRk" data-effect="fadeIn">
+                              <img id="videoimg2" class="img-fluid" src="gym-assets\indexImages\video-frame.jpg" alt="alternative">
+                              <span class="video-play-button">
+                                  <span></span>
+                              </span>
+                          </a>
+                      </div> <!-- end of video-wrapper -->
+                 
+                  </div> <!-- end of image-container -->
+                  <!-- end of video preview -->
+
+              </div> <!-- end of col -->
+          </div> <!-- end of row -->
+      </div> <!-- end of container -->
+  </div> <!-- end of basic-1 -->
+  <!-- end of video -->
+
+<!-- Navigation arrows -->  
+<a class="left" onclick="next_Video(-1,2)">❮</a>  
+<a class="right" onclick="next_Video(1,2)">❯</a>  
+        </div>
+      </div>
+
+
       <a href="#STEPENICEkomentari" data-toggle="collapse"><div class="card-header"><div style="display: inline;">Comments</div>&nbsp<div data-type="loginAlert" style="display: inline; color: red;">(Log in to leave a comment!)</div></div></a>
       <div id="STEPENICEkomentari" class="collapse card-body">
         <div data-type="komentari" data-training="STEPENICE"></div>
@@ -324,9 +443,6 @@
                     <li>
                     <a href="english_treninzi.html">List of trainings</a>
                     </li>
-                    <li>
-                    <a href="">My account</a>
-                    </li>
                     </ul>
                 </div>
             </div>        
@@ -338,7 +454,7 @@
             <h5 class="mb-1">Register for free!</h5>
           </li>
           <li class="list-inline-item">
-            <a href="#!" class="btn btn-danger btn-rounded">SIGN UP</a>
+            <a href="english_register.html" class="btn btn-danger btn-rounded">SIGN UP</a>
           </li>
         </ul>       
         <hr>
@@ -355,4 +471,10 @@
  <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
  <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
  <script src="js/scripts.js"></script> <!-- Custom scripts -->
+
+ <!-- Scripts -->
+<script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+<script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="js/scripts.js"></script> <!-- Custom scripts -->
 </body>
