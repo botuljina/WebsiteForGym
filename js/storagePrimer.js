@@ -53,3 +53,10 @@ window.addEventListener("load", () => {
     }
     storageSet("termini", termini);
 })
+
+function getTop3() {
+    var ocene = Object.entries(storageGet("ratings"));
+    ocene.sort((a,b) => a[1]["rating"] < b[1]["rating"]);
+    var rVal = ocene.slice(0,3).map(element => {return {"trening": element[0], "ocena" : element[1]["rating"]}});
+    return rVal;
+}

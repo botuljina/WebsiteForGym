@@ -288,7 +288,7 @@ function drawStars(type) {
     if (user == null) return;
     var starContainer = document.querySelector(".rating[data-training="+type+"]");
     var users = storageGet("users");
-    var rating = users.find(element => element.username = user)["ratings"][type];
+    var rating = users.find(element => element.username == user)["ratings"][type];
     if (rating == null) return;
     
     for (let i = 0; i < rating; i++) starContainer.children[4 - i].innerHTML = "★";
@@ -307,7 +307,7 @@ function setRating(type, rating) {
     }
     var users = storageGet("users");
 
-    var old = users.find(element => element.username = user)["ratings"][type];
+    var old = users.find(element => element.username == user)["ratings"][type];
     var first = false;
     if (old == null) {
         old = 0;
@@ -315,7 +315,7 @@ function setRating(type, rating) {
     }
     var delta = rating - old;
 
-    users.find(element => element.username = user)["ratings"][type] = rating;
+    users.find(element => element.username == user)["ratings"][type] = rating;
 
     var ratings = storageGet("ratings");
     ratings[type]["rating"] = (ratings[type]["rating"] * ratings[type]["count"] + delta) / (ratings[type]["count"] + first);
@@ -328,7 +328,7 @@ function setRating(type, rating) {
 }
 
 function drawRating(type) {
-    document.querySelector("[data-type=rating][data-training="+type+"]").innerHTML = storageGet("ratings")[type]["rating"];
+    document.querySelector("[data-type=rating][data-training="+type+"]").innerHTML = storageGet("ratings")[type]["rating"].toFixed(2);
 }
 
 function attending(username, training) {
