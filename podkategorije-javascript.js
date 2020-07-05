@@ -72,3 +72,33 @@ var slide_index = 1;
                 break;
             }
         }
+
+        function next_Video(n,i)
+        {
+            globalVideoInd+=n;
+            if(globalVideoInd==3)
+            {
+                globalVideoInd=0; 
+            }
+            if(globalVideoInd==-1)
+            {
+                globalVideoInd=2;
+            }
+            var str_video="video"+i.toString();
+            var str_videoimg="videoimg"+i.toString();
+            switch(globalVideoInd)
+            {
+                case 0: 
+                document.getElementById(str_video).setAttribute("href","https://www.youtube.com/watch?v=ZABBM_GionE");
+                document.getElementById(str_videoimg).setAttribute("src","gym-assets/cardioCarousel/1.jpg");  
+                break;
+                case 1: 
+                document.getElementById(str_video).setAttribute("href","https://www.youtube.com/watch?v=SaiAkZM3R2g");
+                document.getElementById(str_videoimg).setAttribute("src","gym-assets/cardioCarousel/2.jpg");  
+                break;
+                case 2: 
+                document.getElementById(str_video).setAttribute("href","https://www.youtube.com/watch?v=tNsc5GIUPIY");
+                document.getElementById(str_videoimg).setAttribute("src","gym-assets/cardioCarousel/3.jpg");  
+                break;
+            }
+        }
