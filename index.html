@@ -147,7 +147,7 @@
                 <!-- Tabs Links -->
                 <ul class="nav nav-tabs" id="lenoTabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-cog"></i>VRSTE TRENINGA</a>
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-cog"></i>TOP 3 TRENINGA</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-binoculars"></i>OPIS TRENINGA</a>
@@ -172,8 +172,20 @@
                                     <div class="card left-pane first">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">CARDIO</h4>
-                                                <p>Kao i ostale kardiovaskularne vežbe, hodanje, trčanje, traka poboljšava izdržljivost i daje mnoge druge pozitivne zdravstvene efekt</p>
+                                                <h4 class="card-title" id="num1" style="color: #F48B07;"><b>
+                                                <script>
+                                                    var top3 = getTop3();
+                                                    document.getElementById('num1').innerHTML = '1) ' + top3[0].trening;
+                                                </script>    
+                                                                             
+                                                </b></h4>
+                                                <p id ="num1p">
+                                                    <script>
+                                                        var top3 = getTop3();
+                                                        document.getElementById('num1p').innerHTML = 'TRENUTNA OCENA:<b style="color: #F48B07; font-size:25px">' + top3[0].ocena+'</b>';
+                                                    </script> 
+                                                </p>
+                                                
                                             </div>
                                             <div class="card-icon"style="background-color: #F48B07">
                                                 <i class="fas fa-heartbeat"></i>
@@ -183,11 +195,23 @@
                                     <div class="card left-pane">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">YOGA</h4>
-                                                <p>Joga razlikuje pet osnovnih energija koje upravljaju različitim aktivnostima tela.</p>
+                                                <h4 class="card-title" id="num2" style="color: #F48B07;"><b>
+                                                <script>
+                                                    var top3 = getTop3();
+                                                    document.getElementById('num2').innerHTML = '2) ' + top3[1].trening;
+                                                </script>    
+                                                                             
+                                                </b></h4>
+                                                <p id ="num2p">
+                                                    <script>
+                                                        var top3 = getTop3();
+                                                        document.getElementById('num2p').innerHTML = 'TRENUTNA OCENA:<b style="color: #F48B07; font-size:25px">' + top3[1].ocena+'</b>';
+                                                    </script> 
+                                                </p>
+                                                
                                             </div>
-                                            <div class="card-icon" style="background-color: #F48B07">
-                                                <i class="fas fa-heart"></i>
+                                            <div class="card-icon"style="background-color: #F48B07">
+                                                <i class="fas fa-heartbeat"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -209,21 +233,24 @@
                                                 <i class="fas fa-heartbeat"></i>
                                             </div>
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Core</h4>Kada je tvoj core jak, svakodnevne obaveze postaju mnogo lakše.</p>
+                                                <h4 class="card-title" id="num3" style="color: #F48B07;"><b>
+                                                <script>
+                                                    var top3 = getTop3();
+                                                    document.getElementById('num3').innerHTML = '3) ' + top3[2].trening;
+                                                </script>    
+                                                                             
+                                                </b></h4>
+                                                <p id ="num3p">
+                                                    <script>
+                                                        var top3 = getTop3();
+                                                        document.getElementById('num3p').innerHTML = 'TRENUTNA OCENA:<b style="color: #F48B07; font-size:25px">' + top3[2].ocena+'</b>';
+                                                    </script> 
+                                                </p>
+                                                
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card right-pane first">
-                                        <div class="card-body">
-                                            <div class="card-icon" style="background-color: #F48B07">
-                                                <i class="fas fa-heart"></i>
-                                            </div>
-                                            <div class="text-wrapper">
-                                                <h4 class="card-title">PILATES</h4>
-                                                <p>Ukoliko želite da zategnete svoje mišiće i popravite liniju, a da se ujedno naučite pravilnom disanju i držanju, pilates je prava stvar za vas.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
                                   
                                     
                                 </div>
@@ -329,7 +356,7 @@
                                     
                                     <div class="text-area">
                                         <h3>Napravite nalog i vodite evidenciju o treniranju!</h3>
-                                        <p>Pored mogućnosti zakazivanja treninga, pravljenje naloga Vam donosi još neke pogodnosti. Pravljenjem naloga vodiš evidenciju o treninzima na koje si išao i dobijaš mogućnost ostavljanja komentara. Ostavljanje komentara je izuetno bitno jer pomaže drugim klijentima u odabiru najboljeg treninga za njihove potrebe! Ne oklevaj, <a class="turquoise" href="#your-link">REGISTRUJ SE</a>.</p>
+                                        <p>Pored mogućnosti zakazivanja treninga, pravljenje naloga Vam donosi još neke pogodnosti. Pravljenjem naloga vodiš evidenciju o treninzima na koje si išao i dobijaš mogućnost ostavljanja komentara. Ostavljanje komentara je izuetno bitno jer pomaže drugim klijentima u odabiru najboljeg treninga za njihove potrebe! Ne oklevaj, <a class="turquoise" href="register.html">REGISTRUJ SE</a>.</p>
                                     </div> <!-- end of text-area -->
                                 </div> <!-- end of col-md-8 -->
                                 <!-- end of text and icon cards area -->

@@ -150,7 +150,7 @@
                 <!-- Tabs Links -->
                 <ul class="nav nav-tabs" id="lenoTabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-cog"></i>TYPES OF TRAINING</a>
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-cog"></i>TOP 3 TRAININGS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-binoculars"></i>TRAINING DESCRIPTION</a>
@@ -176,9 +176,20 @@
                                     <div class="card left-pane first">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">CARDIO</h4>
-                                                <p>
-                                                    Like other cardiovascular exercises, walking, running, treadmill improves endurance and gives many other positive health effects.</p>
+                                                <h4 class="card-title" id="num1" style="color: #F48B07;"><b>
+                                                <script>
+                                                    var top3 = getTop3();
+                                                    document.getElementById('num1').innerHTML = '1) ' + top3[0].trening;
+                                                </script>    
+                                                                             
+                                                </b></h4>
+                                                <p id ="num1p">
+                                                    <script>
+                                                        var top3 = getTop3();
+                                                        document.getElementById('num1p').innerHTML = 'CURRENT ASSESSMENT:<b style="color: #F48B07; font-size:25px">' + top3[0].ocena+'</b>';
+                                                    </script> 
+                                                </p>
+                                                
                                             </div>
                                             <div class="card-icon"style="background-color: #F48B07">
                                                 <i class="fas fa-heartbeat"></i>
@@ -188,9 +199,20 @@
                                     <div class="card left-pane">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">YOGA</h4>
-                                                <p>
-                                                    Yoga distinguishes five basic energies that govern the various activities of the body.</p>
+                                                <h4 class="card-title" id="num2" style="color: #F48B07;"><b>
+                                                <script>
+                                                    var top3 = getTop3();
+                                                    document.getElementById('num2').innerHTML = '2) ' + top3[1].trening;
+                                                </script>    
+                                                                             
+                                                </b></h4>
+                                                <p id ="num2p">
+                                                    <script>
+                                                        var top3 = getTop3();
+                                                        document.getElementById('num2p').innerHTML = 'CURRENT ASSESSMENT:<b style="color: #F48B07; font-size:25px">' + top3[1].ocena+'</b>';
+                                                    </script> 
+                                                </p>
+                                                
                                             </div>
                                             <div class="card-icon" style="background-color: #F48B07">
                                                 <i class="fas fa-heart"></i>
@@ -215,22 +237,25 @@
                                                 <i class="fas fa-heartbeat"></i>
                                             </div>
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Core</h4>
-                                                When your core is strong, everyday responsibilities become much easier.</p>
+                                                <h4 class="card-title" id="num3" style="color: #F48B07;"><b>
+                                                <script>
+                                                    var top3 = getTop3();
+                                                    document.getElementById('num3').innerHTML = '3) ' + top3[2].trening;
+                                                </script>    
+                                                                             
+                                                </b></h4>
+                                                <p id ="num3p">
+                                                    <script>
+                                                        var top3 = getTop3();
+                                                        document.getElementById('num3p').innerHTML = 'CURRENT ASSESSMENT:<b style="color: #F48B07; font-size:25px">' + top3[2].ocena+'</b>';
+                                                    </script> 
+                                                </p>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card right-pane first">
-                                        <div class="card-body">
-                                            <div class="card-icon" style="background-color: #F48B07">
-                                                <i class="fas fa-heart"></i>
-                                            </div>
-                                            <div class="text-wrapper">
-                                                <h4 class="card-title">PILATES</h4>
-                                                <p>
-                                                    If you want to tighten your muscles and fix the line, and at the same time learn to breathe and hold properly, Pilates is the right thing for you.</p>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                   
                                     
@@ -347,7 +372,7 @@
                                         <h3>
                                             Create an account and keep track of your training!</h3>
                                         <p>In addition to the possibility of scheduling training, creating an order brings you some other benefits. By creating an account, you keep records of the trainings you went to and you get the opportunity to leave comments. Leaving a comment is extremely important
-                                            because it helps other clients choose the best workout for their needs! Do not hesitate, <a class="turquoise" href="#your-link">SIGN UP</a>.</p>
+                                            because it helps other clients choose the best workout for their needs! Do not hesitate, <a class="turquoise" href="english_register.html">SIGN UP</a>.</p>
                                     </div> <!-- end of text-area -->
                                 </div> <!-- end of col-md-8 -->
                                 <!-- end of text and icon cards area -->
